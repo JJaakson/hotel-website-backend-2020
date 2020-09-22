@@ -1,7 +1,7 @@
 package ee.taltech.website;
 
 import ee.taltech.website.model.Item;
-import ee.taltech.website.repository.EntityRepository;
+import ee.taltech.website.repository.ItemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -12,7 +12,7 @@ import java.util.List;
 public class WebsiteApplicationInit implements CommandLineRunner {
 
     @Autowired
-    private EntityRepository entityRepository;
+    private ItemRepository itemRepository;
 
     @Override
     public void run(String... args) throws Exception {
@@ -21,6 +21,6 @@ public class WebsiteApplicationInit implements CommandLineRunner {
                 new Item("Superman", 2),
                 new Item("Wonder Woman", 3)
         );
-        entityRepository.saveAll(heroes);
+        itemRepository.saveAll(heroes);
     }
 }

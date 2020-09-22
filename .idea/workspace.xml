@@ -5,20 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9dcac481-4659-493a-9995-ae28f21d06d0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ee/taltech/website/controller/TestController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ee/taltech/website/model/Item.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ee/taltech/website/repository/EntityRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ee/taltech/website/WebsiteApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ee/taltech/website/WebsiteApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ee/taltech/website/WebsiteApplicationInit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ee/taltech/website/WebsiteApplicationInit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ee/taltech/website/config/SwaggerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ee/taltech/website/config/SwaggerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ee/taltech/website/controller/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ee/taltech/website/controller/TestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ee/taltech/website/repository/EntityRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ee/taltech/website/repository/ItemRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,6 +90,7 @@
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="jdk.selected.JAVA_MODULE" value="14" />
@@ -193,7 +183,7 @@
       <workItem from="1600418147391" duration="557000" />
       <workItem from="1600418717381" duration="283000" />
       <workItem from="1600665676192" duration="481000" />
-      <workItem from="1600765799106" duration="2328000" />
+      <workItem from="1600765799106" duration="2630000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit # 2">
       <created>1600418941578</created>
@@ -209,7 +199,14 @@
       <option name="project" value="LOCAL" />
       <updated>1600766759615</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Test build # 4">
+      <created>1600768360224</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1600768360224</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -218,7 +215,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit # 2" />
     <MESSAGE value="Initial commit # 3" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial commit # 3" />
+    <MESSAGE value="Test build # 4" />
+    <option name="LAST_COMMIT_MESSAGE" value="Test build # 4" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2360" y="99" key="#Project_Structure" timestamp="1600766199481">
@@ -237,10 +235,14 @@
       <screen x="1920" y="0" width="1920" height="1050" />
     </state>
     <state x="2496" y="449" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1536.834/1920.0.1920.1050@1920.0.1920.1050" timestamp="1600766931303" />
-    <state x="2480" y="121" key="CommitChangelistDialog2" timestamp="1600766758976">
+    <state x="2577" y="122" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1600768445494">
       <screen x="1920" y="0" width="1920" height="1050" />
     </state>
-    <state x="2480" y="121" key="CommitChangelistDialog2/0.0.1536.834/1920.0.1920.1050@1920.0.1920.1050" timestamp="1600766758976" />
+    <state x="2577" y="122" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.834/1920.0.1920.1050@1920.0.1920.1050" timestamp="1600768445494" />
+    <state x="2480" y="121" key="CommitChangelistDialog2" timestamp="1600768359549">
+      <screen x="1920" y="0" width="1920" height="1050" />
+    </state>
+    <state x="2480" y="121" key="CommitChangelistDialog2/0.0.1536.834/1920.0.1920.1050@1920.0.1920.1050" timestamp="1600768359549" />
     <state x="2659" y="289" key="FileChooserDialogImpl" timestamp="1600418220421">
       <screen x="1920" y="0" width="1920" height="1050" />
     </state>
@@ -297,10 +299,10 @@
       <screen x="1920" y="0" width="1920" height="1050" />
     </state>
     <state x="2381" y="170" key="SettingsEditor/0.0.1536.834/1920.0.1920.1050@1920.0.1920.1050" timestamp="1600418535048" />
-    <state x="2472" y="258" key="Vcs.Push.Dialog.v2" timestamp="1600766763057">
+    <state x="2472" y="258" key="Vcs.Push.Dialog.v2" timestamp="1600768362722">
       <screen x="1920" y="0" width="1920" height="1050" />
     </state>
-    <state x="2472" y="258" key="Vcs.Push.Dialog.v2/0.0.1536.834/1920.0.1920.1050@1920.0.1920.1050" timestamp="1600766763057" />
+    <state x="2472" y="258" key="Vcs.Push.Dialog.v2/0.0.1536.834/1920.0.1920.1050@1920.0.1920.1050" timestamp="1600768362722" />
     <state x="2697" y="439" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1600766905745">
       <screen x="1920" y="0" width="1920" height="1050" />
     </state>
