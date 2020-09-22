@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9dcac481-4659-493a-9995-ae28f21d06d0" name="Default Changelist" comment="" />
+    <list default="true" id="9dcac481-4659-493a-9995-ae28f21d06d0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ee/taltech/website/WebsiteApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ee/taltech/website/WebsiteApplicationInit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ee/taltech/website/config/SwaggerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,14 +27,46 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
-            <expand />
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="project-back" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="project-back" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="project-back" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="project-back" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build setup" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
             <select />
           </tree_state>
         </projects_view>
       </state>
     </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -49,7 +90,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="jdk.selected.JAVA_MODULE" value="14" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -101,33 +142,75 @@
       <updated>1600416128589</updated>
       <workItem from="1600416129700" duration="1269000" />
       <workItem from="1600418147391" duration="557000" />
-      <workItem from="1600418717381" duration="20000" />
+      <workItem from="1600418717381" duration="283000" />
+      <workItem from="1600665676192" duration="481000" />
+      <workItem from="1600765799106" duration="916000" />
     </task>
+    <task id="LOCAL-00001" summary="Initial commit # 2">
+      <created>1600418941578</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1600418941578</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial commit # 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial commit # 2" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="2360" y="99" key="#Project_Structure" timestamp="1600417397315">
+    <state x="2360" y="99" key="#Project_Structure" timestamp="1600766199481">
       <screen x="1920" y="0" width="1920" height="1050" />
     </state>
-    <state x="2360" y="99" key="#Project_Structure/0.0.1536.834/1920.0.1920.1050@1920.0.1920.1050" timestamp="1600417397315" />
+    <state x="2360" y="99" key="#Project_Structure/0.0.1536.834/1920.0.1920.1050@1920.0.1920.1050" timestamp="1600766199481" />
     <state x="2334" y="180" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1600416784391">
       <screen x="1920" y="0" width="1920" height="1050" />
     </state>
     <state x="2334" y="180" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.834/1920.0.1920.1050@1920.0.1920.1050" timestamp="1600416784391" />
+    <state x="2480" y="121" key="CommitChangelistDialog2" timestamp="1600418940973">
+      <screen x="1920" y="0" width="1920" height="1050" />
+    </state>
+    <state x="2480" y="121" key="CommitChangelistDialog2/0.0.1536.834/1920.0.1920.1050@1920.0.1920.1050" timestamp="1600418940973" />
     <state x="2659" y="289" key="FileChooserDialogImpl" timestamp="1600418220421">
       <screen x="1920" y="0" width="1920" height="1050" />
     </state>
     <state x="2659" y="289" key="FileChooserDialogImpl/0.0.1536.834/1920.0.1920.1050@1920.0.1920.1050" timestamp="1600418220421" />
+    <state width="1877" height="285" key="GridCell.Tab.0.bottom" timestamp="1600419002059">
+      <screen x="1920" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="285" key="GridCell.Tab.0.bottom/0.0.1536.834/1920.0.1920.1050@1920.0.1920.1050" timestamp="1600419002059" />
+    <state width="1877" height="285" key="GridCell.Tab.0.center" timestamp="1600419002059">
+      <screen x="1920" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="285" key="GridCell.Tab.0.center/0.0.1536.834/1920.0.1920.1050@1920.0.1920.1050" timestamp="1600419002059" />
+    <state width="1877" height="285" key="GridCell.Tab.0.left" timestamp="1600419002059">
+      <screen x="1920" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="285" key="GridCell.Tab.0.left/0.0.1536.834/1920.0.1920.1050@1920.0.1920.1050" timestamp="1600419002059" />
+    <state width="1877" height="285" key="GridCell.Tab.0.right" timestamp="1600419002059">
+      <screen x="1920" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="285" key="GridCell.Tab.0.right/0.0.1536.834/1920.0.1920.1050@1920.0.1920.1050" timestamp="1600419002059" />
     <state x="2381" y="170" key="SettingsEditor" timestamp="1600418535048">
       <screen x="1920" y="0" width="1920" height="1050" />
     </state>
     <state x="2381" y="170" key="SettingsEditor/0.0.1536.834/1920.0.1920.1050@1920.0.1920.1050" timestamp="1600418535048" />
-    <state x="2262" y="145" key="new project wizard" timestamp="1600418258661">
+    <state x="2472" y="258" key="Vcs.Push.Dialog.v2" timestamp="1600418948536">
       <screen x="1920" y="0" width="1920" height="1050" />
     </state>
-    <state x="2262" y="145" key="new project wizard/0.0.1536.834/1920.0.1920.1050@1920.0.1920.1050" timestamp="1600418258661" />
+    <state x="2472" y="258" key="Vcs.Push.Dialog.v2/0.0.1536.834/1920.0.1920.1050@1920.0.1920.1050" timestamp="1600418948536" />
+    <state x="2697" y="439" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1600418945907">
+      <screen x="1920" y="0" width="1920" height="1050" />
+    </state>
+    <state x="2697" y="439" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.834/1920.0.1920.1050@1920.0.1920.1050" timestamp="1600418945907" />
+    <state x="2262" y="145" key="new project wizard" timestamp="1600766112991">
+      <screen x="1920" y="0" width="1920" height="1050" />
+    </state>
+    <state x="2262" y="145" key="new project wizard/0.0.1536.834/1920.0.1920.1050@1920.0.1920.1050" timestamp="1600766112991" />
   </component>
 </project>
