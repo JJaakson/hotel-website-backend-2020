@@ -1,0 +1,78 @@
+2020-09-28 09:06:31.318  INFO 7772 --- [main] ee.taltech.website.WebsiteApplication    : Starting WebsiteApplication on LAPTOP-6SIUT0VL with PID 7772 (C:\Users\rjuur\IdeaProjects\iti0203-project-back\build\classes\java\main started by rjuur in C:\Users\rjuur\IdeaProjects\iti0203-project-back)
+2020-09-28 09:06:31.342  INFO 7772 --- [main] ee.taltech.website.WebsiteApplication    : No active profile set, falling back to default profiles: default
+2020-09-28 09:06:33.399  INFO 7772 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-09-28 09:06:33.559  INFO 7772 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 138ms. Found 2 JPA repository interfaces.
+2020-09-28 09:06:34.558  INFO 7772 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-09-28 09:06:34.587  INFO 7772 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-09-28 09:06:34.587  INFO 7772 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-09-28 09:06:35.012  INFO 7772 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring embedded WebApplicationContext
+2020-09-28 09:06:35.013  INFO 7772 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3499 ms
+2020-09-28 09:06:35.087  INFO 7772 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-09-28 09:06:39.554  INFO 7772 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-09-28 09:06:39.572  INFO 7772 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:./h2/rooms'
+2020-09-28 09:06:39.923  INFO 7772 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-09-28 09:06:40.014  INFO 7772 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-09-28 09:06:40.163  INFO 7772 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.20.Final
+2020-09-28 09:06:40.697  WARN 7772 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-09-28 09:06:41.142  INFO 7772 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-09-28 09:06:41.320  INFO 7772 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-09-28 09:06:41.550  INFO 7772 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/api'
+2020-09-28 09:06:42.256  INFO 7772 --- [main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-09-28 09:06:42.858  INFO 7772 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-09-28 09:06:42.879  INFO 7772 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-09-28 09:06:43.441  INFO 7772 --- [main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-09-28 09:06:43.460  INFO 7772 --- [main] ee.taltech.website.WebsiteApplication    : Started WebsiteApplication in 13.054 seconds (JVM running for 13.836)
+2020-09-28 09:20:27.903  INFO 23640 --- [main] ee.taltech.website.WebsiteApplication    : Starting WebsiteApplication on LAPTOP-6SIUT0VL with PID 23640 (C:\Users\rjuur\IdeaProjects\iti0203-project-back\build\classes\java\main started by rjuur in C:\Users\rjuur\IdeaProjects\iti0203-project-back)
+2020-09-28 09:20:27.907  INFO 23640 --- [main] ee.taltech.website.WebsiteApplication    : No active profile set, falling back to default profiles: default
+2020-09-28 09:20:29.409  INFO 23640 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-09-28 09:20:29.511  INFO 23640 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 90ms. Found 2 JPA repository interfaces.
+2020-09-28 09:20:30.562  INFO 23640 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-09-28 09:20:30.586  INFO 23640 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-09-28 09:20:30.587  INFO 23640 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-09-28 09:20:30.848  INFO 23640 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring embedded WebApplicationContext
+2020-09-28 09:20:30.849  INFO 23640 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2883 ms
+2020-09-28 09:20:30.915  INFO 23640 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-09-28 09:20:35.319  INFO 23640 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-09-28 09:20:35.330  INFO 23640 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:./h2/rooms'
+2020-09-28 09:20:35.569  INFO 23640 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-09-28 09:20:35.618  INFO 23640 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-09-28 09:20:35.710  INFO 23640 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.20.Final
+2020-09-28 09:20:35.899  INFO 23640 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-09-28 09:20:35.997  WARN 23640 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-09-28 09:20:36.060  INFO 23640 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-09-28 09:20:37.055  INFO 23640 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/api'
+2020-09-28 09:20:37.403  INFO 23640 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-09-28 09:20:37.417  INFO 23640 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-09-28 09:20:37.484  INFO 23640 --- [main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-09-28 09:20:37.771  INFO 23640 --- [main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-09-28 09:20:37.807  INFO 23640 --- [main] ee.taltech.website.WebsiteApplication    : Started WebsiteApplication in 10.775 seconds (JVM running for 12.138)
+2020-09-28 09:20:55.259  INFO 23640 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-09-28 09:20:55.259  INFO 23640 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-09-28 09:20:55.268  INFO 23640 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 9 ms
+2020-09-28 09:37:01.124  INFO 20496 --- [main] ee.taltech.website.WebsiteApplication    : Starting WebsiteApplication on LAPTOP-6SIUT0VL with PID 20496 (C:\Users\rjuur\IdeaProjects\iti0203-project-back\build\classes\java\main started by rjuur in C:\Users\rjuur\IdeaProjects\iti0203-project-back)
+2020-09-28 09:37:01.130  INFO 20496 --- [main] ee.taltech.website.WebsiteApplication    : No active profile set, falling back to default profiles: default
+2020-09-28 09:37:03.344  INFO 20496 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-09-28 09:37:03.507  INFO 20496 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 143ms. Found 2 JPA repository interfaces.
+2020-09-28 09:37:04.648  INFO 20496 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-09-28 09:37:04.666  INFO 20496 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-09-28 09:37:04.667  INFO 20496 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-09-28 09:37:04.957  INFO 20496 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring embedded WebApplicationContext
+2020-09-28 09:37:04.958  INFO 20496 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3721 ms
+2020-09-28 09:37:05.030  INFO 20496 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-09-28 09:37:09.524  INFO 20496 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-09-28 09:37:09.537  INFO 20496 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:./h2/rooms'
+2020-09-28 09:37:09.873  INFO 20496 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-09-28 09:37:09.963  INFO 20496 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-09-28 09:37:10.085  INFO 20496 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.20.Final
+2020-09-28 09:37:10.423  INFO 20496 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-09-28 09:37:10.471  WARN 20496 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-09-28 09:37:10.691  INFO 20496 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-09-28 09:37:11.352  INFO 20496 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/api'
+2020-09-28 09:37:11.807  INFO 20496 --- [main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-09-28 09:37:11.911  INFO 20496 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-09-28 09:37:11.926  INFO 20496 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-09-28 09:37:12.250  INFO 20496 --- [main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-09-28 09:37:12.268  INFO 20496 --- [main] ee.taltech.website.WebsiteApplication    : Started WebsiteApplication in 12.138 seconds (JVM running for 13.771)
+2020-09-28 09:37:15.790  INFO 20496 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-09-28 09:37:15.790  INFO 20496 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-09-28 09:37:15.797  INFO 20496 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
