@@ -21,7 +21,7 @@ public class IndexController {
     //todo 1.2 create some endpoint to return some object
     @GetMapping("room")
     public Room someRoom(){
-        return new Room("Room 1", 1L);
+        return new Room("Room 1", 1L, 1);
     }
 
     //todo 1.3 create an endpoint "greeting", pass name to it to return "Hello <name>"

@@ -17,12 +17,12 @@ public class RoomsApplicationInit implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         List<Room> rooms = List.of(
-                new Room("Room nr. 1", 1L),
-                new Room("Room nr. 2", 2L),
-                new Room("Room nr. 3", 3L),
-                new Room("Room nr. 4", 4L),
-                new Room("Room nr. 5", 5L),
-                new Room("Room nr. 69", 6L)
+                new Room("Room nr. 1", 1L, 1),
+                new Room("Room nr. 2", 2L, 1),
+                new Room("Room nr. 3", 3L, 1),
+                new Room("Room nr. 4", 4L, 1),
+                new Room("Room nr. 5", 5L, 1),
+                new Room("Room nr. 69", 6L, 1)
         );
         roomsRepository.saveAll(rooms);
     }

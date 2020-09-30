@@ -11,10 +11,12 @@ public class Room {
     @GeneratedValue
     private long id;
     private String name;
+    private int amount;
 
-    public Room(String name, Long id) {
+    public Room(String name, Long id, int amount) {
         this.name = name;
         this.id = id;
+        this.amount = amount;
     }
 
     public Room() {
@@ -35,5 +37,13 @@ public class Room {
     public Room setId(Long id) {
         this.id = id;
         return this;
+    }
+
+    public int getAmount() {
+        return amount;
+    }
+
+    public void setAmount(int amount) {
+        this.amount = amount;
     }
 }
