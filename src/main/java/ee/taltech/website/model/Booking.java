@@ -3,21 +3,22 @@ package ee.taltech.website.model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import java.time.LocalDate;
 
 @Entity
 public class Booking {
 
     @Id
     @GeneratedValue
-    private long id;
-    //private Room room;
-    private LocalDate startDate;
-    private LocalDate endDate;
+    private Long id;
 
-    public Booking(long id, Room room, LocalDate startDate, LocalDate endDate) {
+    private String name;
+
+    private String startDate;
+    private String endDate;
+
+    public Booking(Long id, String name, String startDate, String endDate) {
         this.id = id;
-        //this.room = room;
+        this.name = name;
         this.startDate = startDate;
         this.endDate = endDate;
     }
@@ -33,27 +34,35 @@ public class Booking {
         this.id = id;
     }
 
-    /*public Room getRoom() {
-        return room;
+    public String getName() {
+        return name;
     }
 
-    public void setRoom(Room room) {
-        this.room = room;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /*public long getRoomId() {
+        return roomId;
+    }
+
+    public void setRoomId(long roomId) {
+        this.roomId = roomId;
     }*/
 
-    public LocalDate getStartDate() {
+    public String getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(LocalDate startDate) {
+    public void setStartDate(String startDate) {
         this.startDate = startDate;
     }
 
-    public LocalDate getEndDate() {
+    public String getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(LocalDate endDate) {
+    public void setEndDate(String endDate) {
         this.endDate = endDate;
     }
 }

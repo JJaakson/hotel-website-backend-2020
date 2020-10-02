@@ -3,6 +3,7 @@ package ee.taltech.website.controller;
 import ee.taltech.website.model.Booking;
 import ee.taltech.website.service.BookingsService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -22,12 +23,14 @@ public class BookingsController {
     @GetMapping("{id}")
     public Booking getBooking(@PathVariable Long id) { return bookingsService.findById(id); }
 
-    @PostMapping("{id}")
-    public Booking saveBooking(@RequestBody Booking booking) { return bookingsService.save(booking); }
+    @PostMapping()
+    public Booking saveBooking(@RequestBody Booking booking) {
+        System.out.println("booked");
+        return bookingsService.save(booking); }
 
-    /*@PutMapping("{id}")
+    @PutMapping("{id}")
     public Booking updateBooking(@RequestBody Booking booking) { return bookingsService.update(booking); }
-*/
+
     @DeleteMapping("{id}")
     public void updateBooking(@PathVariable Long id) { bookingsService.delete(id); }
 

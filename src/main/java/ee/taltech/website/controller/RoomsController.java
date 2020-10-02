@@ -1,6 +1,8 @@
 package ee.taltech.website.controller;
 
+import ee.taltech.website.model.Booking;
 import ee.taltech.website.model.Room;
+import ee.taltech.website.service.BookingsService;
 import ee.taltech.website.service.RoomsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -13,6 +15,9 @@ public class RoomsController {
 
     @Autowired
     private RoomsService roomsService;
+
+    @Autowired
+    private BookingsService bookingsService;
 
     @GetMapping
     public List<Room> getRooms(@RequestParam(value = "name", required = false) String name) {
@@ -42,6 +47,9 @@ public class RoomsController {
     public void updateRoom(@PathVariable Long id) {
         roomsService.delete(id);
     }
-    //todo validation?
-    //todo add tests
+
+    @PostMapping("/book")
+    public Booking createBooking(@RequestBody Booking booking) {
+        return bookingsService.save(booking);
+    }
 }
