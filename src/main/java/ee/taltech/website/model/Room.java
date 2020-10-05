@@ -11,30 +11,20 @@ public class Room {
     @GeneratedValue
     private Long id;
     private String name;
-    private RoomType roomType;
     private Integer amount;
 
-    public Room(String name, RoomType roomType) {
+    public Room(String name, Integer amount) {
         this.name = name;
-        this.roomType = roomType;
+        this.amount = amount;
     }
 
-    public Room(Long id, String name, RoomType roomType, Integer amount) {
+    public Room(Long id, String name, Integer amount) {
         this.name = name;
         this.id = id;
-        this.roomType = roomType;
         this.amount = amount;
     }
 
     public Room() {
-    }
-
-    public RoomType getRoomType() {
-        return roomType;
-    }
-
-    public void setRoomType(RoomType roomType) {
-        this.roomType = roomType;
     }
 
     public String getName() {

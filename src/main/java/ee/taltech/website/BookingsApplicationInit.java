@@ -19,7 +19,6 @@ public class BookingsApplicationInit implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         List<Booking> bookings = List.of(
-                new Booking(1L, "Toabroneering", "2020-11-13", "2020-11-15", RoomType.STANDARD_SINGLE)
         );
         bookingsRepository.saveAll(bookings);
     }

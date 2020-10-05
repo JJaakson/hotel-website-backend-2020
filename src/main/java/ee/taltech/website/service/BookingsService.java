@@ -3,6 +3,7 @@ package ee.taltech.website.service;
 import ee.taltech.website.exception.BookingNotFoundException;
 import ee.taltech.website.exception.InvalidBookingException;
 import ee.taltech.website.model.Booking;
+import ee.taltech.website.model.Room;
 import ee.taltech.website.repository.BookingsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,6 +17,9 @@ public class BookingsService {
 
     @Autowired
     private BookingsRepository bookingsRepository;
+
+    @Autowired
+    private RoomsService roomsService;
 
     public List<Booking> findAll() {
         return bookingsRepository.findAll();
@@ -38,21 +42,20 @@ public class BookingsService {
         if (booking.getEndDate() == null) {
             throw new InvalidBookingException("There is no startDate");
         }
-        if (booking.getRoomType() == null) {
-            throw new InvalidBookingException("No roomtype");
-        }
-        if (availableRooms(booking) == booking.getRoomType().getAmount())  {
+        Room roomBeingBooked = roomsService.findById(booking.getRoomId());
+        if (availableRooms(booking) == roomBeingBooked.getAmount())  {
             throw new InvalidBookingException("No rooms available");
         }
+        roomBeingBooked.setAmount(roomBeingBooked.getAmount() - 1);
         return bookingsRepository.save(booking);
     }
 
-    private Integer availableRooms(Booking booking) {
+    public int availableRooms(Booking booking) {
         //long roomType = booking.getRoomId();
         LocalDate bookingStart = LocalDate.parse(booking.getStartDate());
         LocalDate bookingEnd = LocalDate.parse(booking.getEndDate());
         List<Booking> bookedRooms = bookingsRepository.findAll().stream()
-                .filter(b -> b.getRoomType().equals(booking.getRoomType())
+                .filter(b -> b.getRoomId().equals(booking.getRoomId())
                         && bookingStart.isAfter(LocalDate.parse(b.getStartDate()))
                         && bookingStart.isBefore(LocalDate.parse(b.getEndDate()))
                         || bookingEnd.isAfter(LocalDate.parse(b.getStartDate()))
