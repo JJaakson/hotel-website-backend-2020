@@ -15,12 +15,14 @@ public class Booking {
 
     private String startDate;
     private String endDate;
+    private RoomType roomType;
 
-    public Booking(Long id, String name, String startDate, String endDate) {
+    public Booking(Long id, String name, String startDate, String endDate, RoomType roomType) {
         this.id = id;
         this.name = name;
         this.startDate = startDate;
         this.endDate = endDate;
+        this.roomType = roomType;
     }
 
     public Booking() {
@@ -30,7 +32,7 @@ public class Booking {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -42,13 +44,13 @@ public class Booking {
         this.name = name;
     }
 
-    /*public long getRoomId() {
-        return roomId;
+    public RoomType getRoomType() {
+        return roomType;
     }
 
-    public void setRoomId(long roomId) {
-        this.roomId = roomId;
-    }*/
+    public void setRoomType(RoomType roomType) {
+        this.roomType = roomType;
+    }
 
     public String getStartDate() {
         return startDate;
