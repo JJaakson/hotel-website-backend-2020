@@ -30,7 +30,7 @@ public class BookingsService {
             throw new InvalidBookingException("Id is already present");
         }
         if (booking.getName() == null) {
-            throw new InvalidBookingException("ther is no name");
+            throw new InvalidBookingException("There is no name");
         }
         if (booking.getStartDate() == null) {
             throw new InvalidBookingException("There is no startDate");
