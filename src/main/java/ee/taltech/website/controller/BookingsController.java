@@ -1,6 +1,9 @@
 package ee.taltech.website.controller;
 
+import ee.taltech.website.dto.RoomDto;
+import ee.taltech.website.model.AvailabilityData;
 import ee.taltech.website.model.Booking;
+import ee.taltech.website.model.Room;
 import ee.taltech.website.service.BookingsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -34,6 +37,9 @@ public class BookingsController {
     @DeleteMapping("{id}")
     public void updateBooking(@PathVariable Long id) { bookingsService.delete(id); }
 
-
+    @PutMapping
+    public RoomDto updateAvailabilityData(@RequestBody AvailabilityData data) {
+        return bookingsService.updateAvailabilityData(data);
+    }
 
 }
