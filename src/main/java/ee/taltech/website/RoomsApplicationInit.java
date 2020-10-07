@@ -1,6 +1,7 @@
 package ee.taltech.website;
 
 import ee.taltech.website.model.Room;
+import ee.taltech.website.model.RoomType;
 import ee.taltech.website.repository.RoomsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -17,12 +18,9 @@ public class RoomsApplicationInit implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         List<Room> rooms = List.of(
-                new Room("Room nr. 1", 1L),
-                new Room("Room nr. 2", 2L),
-                new Room("Room nr. 3", 3L),
-                new Room("Room nr. 4", 4L),
-                new Room("Room nr. 5", 5L),
-                new Room("Room nr. 69", 6L)
+                new Room ("Standard Single", 4),
+                new Room( "Standard Double", 3),
+                new Room( "Deluxe", 0)
         );
         roomsRepository.saveAll(rooms);
     }
