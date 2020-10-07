@@ -20,7 +20,7 @@ public class RoomsApplicationInit implements CommandLineRunner {
         List<Room> rooms = List.of(
                 new Room ("Standard Single", 4),
                 new Room( "Standard Double", 3),
-                new Room( "Deluxe", 2)
+                new Room( "Deluxe", 0)
         );
         roomsRepository.saveAll(rooms);
     }

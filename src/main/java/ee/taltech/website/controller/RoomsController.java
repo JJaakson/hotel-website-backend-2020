@@ -47,9 +47,4 @@ public class RoomsController {
     public void updateRoom(@PathVariable Long id) {
         roomsService.delete(id);
     }
-
-    @PostMapping("/book")
-    public Booking createBooking(@RequestBody Booking booking) {
-        return bookingsService.save(booking);
-    }
 }

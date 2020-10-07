@@ -44,6 +44,9 @@ public class BookingsService {
         if (booking.getEndDate() == null) {
             throw new InvalidBookingException("There is no startDate");
         }
+        if (booking.getPaymentInfo() == null) {
+            throw new InvalidBookingException("There is no payment info");
+        }
         Room roomBeingBooked = roomsService.findById(booking.getRoomId());
         if (availableRooms(booking.getRoomId(), booking.getStartDate(), booking.getEndDate())
                == roomBeingBooked.getAmount())  {

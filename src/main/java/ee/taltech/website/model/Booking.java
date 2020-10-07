@@ -15,13 +15,23 @@ public class Booking {
     private String startDate;
     private String endDate;
     private Long roomId;
+    private String paymentInfo;
 
-    public Booking(Long id, String name, String startDate, String endDate, Long roomId) {
+    public Booking(Long id, String name, String startDate, String endDate, Long roomId, String paymentInfo) {
         this.id = id;
         this.name = name;
         this.startDate = startDate;
         this.endDate = endDate;
         this.roomId = roomId;
+        this.paymentInfo = paymentInfo;
+    }
+
+    public String getPaymentInfo() {
+        return paymentInfo;
+    }
+
+    public void setPaymentInfo(String paymentInfo) {
+        this.paymentInfo = paymentInfo;
     }
 
     public Booking() {
