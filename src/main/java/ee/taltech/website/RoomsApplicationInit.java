@@ -1,7 +1,6 @@
 package ee.taltech.website;
 
 import ee.taltech.website.model.Room;
-import ee.taltech.website.model.RoomType;
 import ee.taltech.website.repository.RoomsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
