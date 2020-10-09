@@ -16,7 +16,6 @@ public class RoomsService {
     private RoomsRepository roomsRepository;
 
     public List<Room> findAll(String name) {
-        //todo add name
         return roomsRepository.findAll();
     }
 
@@ -32,22 +31,6 @@ public class RoomsService {
         if (room.getId() != null){
             throw new InvalidRoomException("Id is already present");
         }
-        // save will generate id for object
         return roomsRepository.save(room);
-    }
-
-    public Room update(Room room, Long id) {
-        if (room.getName() == null) {
-            throw new InvalidRoomException("Room has no name");
-        }
-        Room dbRoom = findById(id);
-        dbRoom.setName(room.getName());
-        // save works as update when id is present
-        return roomsRepository.save(dbRoom);
-    }
-
-    public void delete(Long id) {
-        Room dbRoom = findById(id);
-        roomsRepository.delete(dbRoom);
     }
 }

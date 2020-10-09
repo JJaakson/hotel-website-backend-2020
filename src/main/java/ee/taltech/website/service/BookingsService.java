@@ -47,6 +47,9 @@ public class BookingsService {
         if (booking.getPaymentInfo() == null) {
             throw new InvalidBookingException("There is no payment info");
         }
+        if (booking.getRoomId() == null) {
+            throw new InvalidBookingException("There is no information about the room");
+        }
         Room roomBeingBooked = roomsService.findById(booking.getRoomId());
         if (availableRooms(booking.getRoomId(), booking.getStartDate(), booking.getEndDate())
                == roomBeingBooked.getAmount())  {
@@ -56,7 +59,6 @@ public class BookingsService {
     }
 
     public int availableRooms(Long roomId, String startDate, String endDate) {
-        //long roomType = booking.getRoomId();
         LocalDate bookingStart = LocalDate.parse(startDate);
         LocalDate bookingEnd = LocalDate.parse(endDate);
         List<Booking> bookedRooms = bookingsRepository.findAll().stream()
@@ -73,17 +75,6 @@ public class BookingsService {
                         || bookingEnd.isEqual(LocalDate.parse(b.getStartDate())))
                 .collect(Collectors.toList());
         return bookedRooms.size();
-    }
-
-    public Booking update(Booking booking) {
-        Booking dbBooking = findById(booking.getId());
-        dbBooking.setName(booking.getName());
-        return bookingsRepository.save(dbBooking);
-    }
-
-    public void delete(Long id) {
-        Booking dbBooking = findById(id);
-        bookingsRepository.delete(dbBooking);
     }
 
     public RoomDto updateAvailabilityData(AvailabilityData data) {
