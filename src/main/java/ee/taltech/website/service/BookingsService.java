@@ -61,7 +61,7 @@ public class BookingsService {
     public int availableRooms(Long roomId, String startDate, String endDate) {
         LocalDate bookingStart = LocalDate.parse(startDate);
         LocalDate bookingEnd = LocalDate.parse(endDate);
-        List<Booking> bookedRooms = bookingsRepository.findAll().stream()
+        List<Booking> bookedRooms = this.findAll().stream()
                 .filter(b -> b.getRoomId().equals(roomId)
                         && bookingStart.isAfter(LocalDate.parse(b.getStartDate()))
                         && bookingStart.isBefore(LocalDate.parse(b.getEndDate()))

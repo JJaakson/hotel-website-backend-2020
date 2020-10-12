@@ -26,7 +26,6 @@ public class BookingsController {
 
     @PostMapping()
     public Booking saveBooking(@RequestBody Booking booking) {
-        System.out.println("booked");
         return bookingsService.save(booking); }
 
     @PutMapping
