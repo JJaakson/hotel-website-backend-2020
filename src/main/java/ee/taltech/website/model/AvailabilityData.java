@@ -2,11 +2,11 @@ package ee.taltech.website.model;
 
 public class AvailabilityData {
 
-    private Long roomId;
+    private Long room;
     private String startDate;
 
     public AvailabilityData(Long roomId, String startDate, String endDate) {
-        this.roomId = roomId;
+        this.room = roomId;
         this.startDate = startDate;
         this.endDate = endDate;
     }
@@ -14,11 +14,11 @@ public class AvailabilityData {
     private String endDate;
 
     public Long getRoomId() {
-        return roomId;
+        return room;
     }
 
     public void setRoomId(Long roomId) {
-        this.roomId = roomId;
+        this.room = roomId;
     }
 
     public String getStartDate() {

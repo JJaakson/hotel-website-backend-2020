@@ -16,6 +16,7 @@ public class RoomsController {
 
     @GetMapping
     public List<Room> getRooms(@RequestParam(value = "name", required = false) String name) {
+        System.out.println(roomsService.findAll(name).get(0).getName());
         return roomsService.findAll(name);
     }
 

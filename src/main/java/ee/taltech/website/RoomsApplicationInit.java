@@ -17,9 +17,9 @@ public class RoomsApplicationInit implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         List<Room> rooms = List.of(
-                new Room ("Standard Single", 4),
+                new Room ("Standard Single", 5),
                 new Room( "Standard Double", 3),
-                new Room( "Deluxe", 0)
+                new Room( "Deluxe", 2)
         );
         roomsRepository.saveAll(rooms);
     }

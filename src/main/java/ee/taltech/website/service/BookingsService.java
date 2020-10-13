@@ -47,12 +47,11 @@ public class BookingsService {
         if (booking.getPaymentInfo() == null) {
             throw new InvalidBookingException("There is no payment info");
         }
-        if (booking.getRoomId() == null) {
+        if (booking.getRoom() == null) {
             throw new InvalidBookingException("There is no information about the room");
         }
-        Room roomBeingBooked = roomsService.findById(booking.getRoomId());
-        if (availableRooms(booking.getRoomId(), booking.getStartDate(), booking.getEndDate())
-               == roomBeingBooked.getAmount())  {
+        if (availableRooms(booking.getRoom().getId(), booking.getStartDate(), booking.getEndDate())
+               == booking.getRoom().getAmount())  {
             throw new InvalidBookingException("No rooms available");
         }
         return bookingsRepository.save(booking);
@@ -61,9 +60,9 @@ public class BookingsService {
     public int availableRooms(Long roomId, String startDate, String endDate) {
         LocalDate bookingStart = LocalDate.parse(startDate);
         LocalDate bookingEnd = LocalDate.parse(endDate);
-        List<Booking> bookedRooms = this.findAll().stream()
-                .filter(b -> b.getRoomId().equals(roomId)
-                        && bookingStart.isAfter(LocalDate.parse(b.getStartDate()))
+        List<Booking> bookedRooms = bookingsRepository.findAll().stream()
+                .filter(b -> b.getRoom().getId().intValue() == roomId.intValue())
+                .filter(b -> bookingStart.isAfter(LocalDate.parse(b.getStartDate()))
                         && bookingStart.isBefore(LocalDate.parse(b.getEndDate()))
                         || bookingEnd.isAfter(LocalDate.parse(b.getStartDate()))
                         && bookingEnd.isBefore(LocalDate.parse(b.getEndDate()))
