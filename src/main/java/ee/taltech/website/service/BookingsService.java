@@ -47,23 +47,23 @@ public class BookingsService {
         if (booking.getPaymentInfo() == null) {
             throw new InvalidBookingException("There is no payment info");
         }
-        if (booking.getRoomId() == null) {
+        if (booking.getRoom() == null) {
             throw new InvalidBookingException("There is no information about the room");
         }
-        Room roomBeingBooked = roomsService.findById(booking.getRoomId());
-        if (availableRooms(booking.getRoomId(), booking.getStartDate(), booking.getEndDate())
+        Room roomBeingBooked = roomsService.findById(booking.getRoom().getId());
+        if (bookedRooms(booking.getRoom().getId(), booking.getStartDate(), booking.getEndDate())
                == roomBeingBooked.getAmount())  {
             throw new InvalidBookingException("No rooms available");
         }
         return bookingsRepository.save(booking);
     }
 
-    public int availableRooms(Long roomId, String startDate, String endDate) {
+    public int bookedRooms(Long roomId, String startDate, String endDate) {
         LocalDate bookingStart = LocalDate.parse(startDate);
         LocalDate bookingEnd = LocalDate.parse(endDate);
-        List<Booking> bookedRooms = this.findAll().stream()
-                .filter(b -> b.getRoomId().equals(roomId)
-                        && bookingStart.isAfter(LocalDate.parse(b.getStartDate()))
+        List<Booking> bookedRooms = bookingsRepository.findAll().stream()
+                .filter(b -> b.getRoom().getId().intValue() == roomId.intValue())
+                .filter(b -> bookingStart.isAfter(LocalDate.parse(b.getStartDate()))
                         && bookingStart.isBefore(LocalDate.parse(b.getEndDate()))
                         || bookingEnd.isAfter(LocalDate.parse(b.getStartDate()))
                         && bookingEnd.isBefore(LocalDate.parse(b.getEndDate()))
@@ -79,11 +79,11 @@ public class BookingsService {
 
     public RoomDto updateAvailabilityData(AvailabilityData data) {
         Room roomBeingBooked = roomsService.findById(data.getRoomId());
-        int availableRoomsCount = availableRooms(data.getRoomId(), data.getStartDate(), data.getEndDate());
-        if (availableRoomsCount == roomBeingBooked.getAmount())  {
+        int bookedRoomsCount = bookedRooms(data.getRoomId(), data.getStartDate(), data.getEndDate());
+        if (bookedRoomsCount == roomBeingBooked.getAmount())  {
             throw new InvalidBookingException("No rooms available");
         }
         return new RoomDto(data.getRoomId(), roomBeingBooked.getName(),
-                roomBeingBooked.getAmount() - availableRoomsCount);
+                roomBeingBooked.getAmount() - bookedRoomsCount);
     }
 }

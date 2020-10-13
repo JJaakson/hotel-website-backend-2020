@@ -3,6 +3,7 @@ package ee.taltech.website.model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Booking {
@@ -14,15 +15,24 @@ public class Booking {
     private String name;
     private String startDate;
     private String endDate;
-    private Long roomId;
     private String paymentInfo;
+    @OneToOne
+    private Room room;
 
-    public Booking(Long id, String name, String startDate, String endDate, Long roomId, String paymentInfo) {
+    public Room getRoom() {
+        return room;
+    }
+
+    public void setRoom(Room room) {
+        this.room = room;
+    }
+
+    public Booking(Long id, String name, String startDate, String endDate, Room room, String paymentInfo) {
         this.id = id;
         this.name = name;
         this.startDate = startDate;
         this.endDate = endDate;
-        this.roomId = roomId;
+        this.room = room;
         this.paymentInfo = paymentInfo;
     }
 
@@ -51,14 +61,6 @@ public class Booking {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public Long getRoomId() {
-        return roomId;
-    }
-
-    public void setRoomId(Long roomId) {
-        this.roomId = roomId;
     }
 
     public String getStartDate() {
