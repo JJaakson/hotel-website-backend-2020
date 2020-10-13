@@ -51,14 +51,14 @@ public class BookingsService {
             throw new InvalidBookingException("There is no information about the room");
         }
         Room roomBeingBooked = roomsService.findById(booking.getRoom().getId());
-        if (availableRooms(booking.getRoom().getId(), booking.getStartDate(), booking.getEndDate())
+        if (bookedRooms(booking.getRoom().getId(), booking.getStartDate(), booking.getEndDate())
                == roomBeingBooked.getAmount())  {
             throw new InvalidBookingException("No rooms available");
         }
         return bookingsRepository.save(booking);
     }
 
-    public int availableRooms(Long roomId, String startDate, String endDate) {
+    public int bookedRooms(Long roomId, String startDate, String endDate) {
         LocalDate bookingStart = LocalDate.parse(startDate);
         LocalDate bookingEnd = LocalDate.parse(endDate);
         List<Booking> bookedRooms = bookingsRepository.findAll().stream()
@@ -79,7 +79,7 @@ public class BookingsService {
 
     public RoomDto updateAvailabilityData(AvailabilityData data) {
         Room roomBeingBooked = roomsService.findById(data.getRoomId());
-        int bookedRoomsCount = availableRooms(data.getRoomId(), data.getStartDate(), data.getEndDate());
+        int bookedRoomsCount = bookedRooms(data.getRoomId(), data.getStartDate(), data.getEndDate());
         if (bookedRoomsCount == roomBeingBooked.getAmount())  {
             throw new InvalidBookingException("No rooms available");
         }
