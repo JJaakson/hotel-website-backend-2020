@@ -1,11 +1,11 @@
 package ee.taltech.website.model;
 
-public class AvailabilityData {
+public class DataToSearchBy {
 
     private Long room;
     private String startDate;
 
-    public AvailabilityData(Long roomId, String startDate, String endDate) {
+    public DataToSearchBy(Long roomId, String startDate, String endDate) {
         this.room = roomId;
         this.startDate = startDate;
         this.endDate = endDate;
