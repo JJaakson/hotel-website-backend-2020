@@ -1,4 +1,4 @@
-package a_theory.question4;
+package ee.taltech.website.a_theory.question4;
 
 public class DependencyInjection {
 

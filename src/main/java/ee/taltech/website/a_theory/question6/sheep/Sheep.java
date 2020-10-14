@@ -1,4 +1,4 @@
-package a_theory.question6.sheep;
+package ee.taltech.website.a_theory.question6.sheep;
 
 public class Sheep {
 

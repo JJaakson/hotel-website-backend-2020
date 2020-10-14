@@ -1,4 +1,4 @@
-package a_theory.question2;
+package ee.taltech.website.a_theory.question2;
 
 public class Gradle {
 

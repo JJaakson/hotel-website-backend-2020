@@ -1,4 +1,4 @@
-package a_theory.question6.chocolate;
+package ee.taltech.website.a_theory.question6.chocolate;
 
 import java.util.List;
 
