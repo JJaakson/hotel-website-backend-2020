@@ -36,7 +36,7 @@ public class BookingsController {
         return bookingsService.updateAvailabilityData(data);
     }
 
-    @GetMapping("/datedata")
+    @PutMapping("/datedata")
     public List<Booking> getBookingsByDate(@RequestBody DataToSearchBy data) {
         return bookingsService.getBookingsByDate(data);
     }
