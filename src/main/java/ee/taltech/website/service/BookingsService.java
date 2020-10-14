@@ -3,8 +3,8 @@ package ee.taltech.website.service;
 import ee.taltech.website.dto.RoomDto;
 import ee.taltech.website.exception.BookingNotFoundException;
 import ee.taltech.website.exception.InvalidBookingException;
-import ee.taltech.website.model.AvailabilityData;
 import ee.taltech.website.model.Booking;
+import ee.taltech.website.model.DataToSearchBy;
 import ee.taltech.website.model.Room;
 import ee.taltech.website.repository.BookingsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 @Service
 public class BookingsService {
@@ -51,39 +52,48 @@ public class BookingsService {
             throw new InvalidBookingException("There is no information about the room");
         }
         Room roomBeingBooked = roomsService.findById(booking.getRoom().getId());
-        if (bookedRooms(booking.getRoom().getId(), booking.getStartDate(), booking.getEndDate())
+        if (bookedRoomsCount(booking.getRoom().getId(), booking.getStartDate(), booking.getEndDate())
                == roomBeingBooked.getAmount())  {
             throw new InvalidBookingException("No rooms available");
         }
         return bookingsRepository.save(booking);
     }
 
-    public int bookedRooms(Long roomId, String startDate, String endDate) {
-        LocalDate bookingStart = LocalDate.parse(startDate);
-        LocalDate bookingEnd = LocalDate.parse(endDate);
-        List<Booking> bookedRooms = bookingsRepository.findAll().stream()
-                .filter(b -> b.getRoom().getId().intValue() == roomId.intValue())
-                .filter(b -> bookingStart.isAfter(LocalDate.parse(b.getStartDate()))
-                        && bookingStart.isBefore(LocalDate.parse(b.getEndDate()))
-                        || bookingEnd.isAfter(LocalDate.parse(b.getStartDate()))
-                        && bookingEnd.isBefore(LocalDate.parse(b.getEndDate()))
-                        || bookingStart.isBefore(LocalDate.parse(b.getStartDate()))
-                        && bookingEnd.isAfter(LocalDate.parse(b.getEndDate()))
-                        || bookingStart.isEqual(LocalDate.parse(b.getStartDate()))
-                        || bookingEnd.isEqual(LocalDate.parse(b.getEndDate()))
-                        || bookingStart.isEqual(LocalDate.parse(b.getEndDate()))
-                        || bookingEnd.isEqual(LocalDate.parse(b.getStartDate())))
-                .collect(Collectors.toList());
-        return bookedRooms.size();
-    }
 
-    public RoomDto updateAvailabilityData(AvailabilityData data) {
+    public RoomDto updateAvailabilityData(DataToSearchBy data) {
         Room roomBeingBooked = roomsService.findById(data.getRoomId());
-        int bookedRoomsCount = bookedRooms(data.getRoomId(), data.getStartDate(), data.getEndDate());
+        int bookedRoomsCount = bookedRoomsCount(data.getRoomId(), data.getStartDate(), data.getEndDate());
         if (bookedRoomsCount == roomBeingBooked.getAmount())  {
-            throw new InvalidBookingException("No rooms available");
+            throw new InvalidBookingException("No rooms  available");
         }
         return new RoomDto(data.getRoomId(), roomBeingBooked.getName(),
                 roomBeingBooked.getAmount() - bookedRoomsCount);
     }
+
+    public List<Booking> getBookingsByDate(DataToSearchBy data) {
+        return filterByDate(bookingsRepository.findAll().stream(), data.getStartDate(), data.getEndDate());
+    }
+
+    private int bookedRoomsCount(Long roomId, String startDate, String endDate) {
+        Stream<Booking> bookingStreamByCorrectRooms = bookingsRepository.findAll().stream()
+                .filter(b -> b.getRoom().getId().intValue() == roomId.intValue());
+        return filterByDate(bookingStreamByCorrectRooms, startDate, endDate).size();
+    }
+
+    private List<Booking> filterByDate(Stream<Booking> streamOfBookings, String start, String end) {
+        LocalDate startDate = LocalDate.parse(start);
+        LocalDate endDate = LocalDate.parse(end);
+        return streamOfBookings.filter(b -> startDate.isAfter(LocalDate.parse(b.getStartDate()))
+                && startDate.isBefore(LocalDate.parse(b.getEndDate()))
+                || endDate.isAfter(LocalDate.parse(b.getStartDate()))
+                && endDate.isBefore(LocalDate.parse(b.getEndDate()))
+                || startDate.isBefore(LocalDate.parse(b.getStartDate()))
+                && endDate.isAfter(LocalDate.parse(b.getEndDate()))
+                || startDate.isEqual(LocalDate.parse(b.getStartDate()))
+                || endDate.isEqual(LocalDate.parse(b.getEndDate()))
+                || startDate.isEqual(LocalDate.parse(b.getEndDate()))
+                || endDate.isEqual(LocalDate.parse(b.getStartDate())))
+                .collect(Collectors.toList());
+    }
+
 }

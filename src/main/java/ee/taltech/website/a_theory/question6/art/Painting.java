@@ -1,4 +1,4 @@
-package a_theory.question6.art;
+package ee.taltech.website.a_theory.question6.art;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
