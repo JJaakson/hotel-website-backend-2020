@@ -8,7 +8,8 @@ public class Abstraction {
     //todo p1
     // In your words (do not use wiki definitions)
     // What is abstraction? (P.S It has nothing to do with keyword abstract)
-    // Answer:
+    // Answer: It is making something complicated and making it easy to use. For example, a TV-remote, it has simple
+    //         buttons but underneath the buttons is a complex control mechanism.
 
     //todo p2
     // Create an abstraction of an animal of your choice.
