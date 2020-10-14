@@ -64,7 +64,7 @@ public class BookingsService {
         Room roomBeingBooked = roomsService.findById(data.getRoomId());
         int bookedRoomsCount = bookedRoomsCount(data.getRoomId(), data.getStartDate(), data.getEndDate());
         if (bookedRoomsCount == roomBeingBooked.getAmount())  {
-            throw new InvalidBookingException("No rooms available");
+            throw new InvalidBookingException("No rooms  available");
         }
         return new RoomDto(data.getRoomId(), roomBeingBooked.getName(),
                 roomBeingBooked.getAmount() - bookedRoomsCount);
