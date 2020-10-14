@@ -32,7 +32,7 @@ public class BookingsController {
     }
 
     @PutMapping
-    public RoomDto updateAvailabilityData(@RequestBody DataToSearchBy data) {
+    public RoomDto getAvailabilityData(@RequestBody DataToSearchBy data) {
         return bookingsService.updateAvailabilityData(data);
     }
 

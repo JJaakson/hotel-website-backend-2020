@@ -1,6 +1,5 @@
 package ee.taltech.website.service;
 
-import ee.taltech.website.exception.InvalidRoomException;
 import ee.taltech.website.exception.RoomNotFoundException;
 import ee.taltech.website.model.Room;
 import ee.taltech.website.repository.RoomsRepository;
@@ -22,15 +21,5 @@ public class RoomsService {
     public Room findById(Long id) {
         return roomsRepository.findById(id)
                 .orElseThrow(RoomNotFoundException::new);
-    }
-
-    public Room save(Room room) {
-        if (room.getName() == null) {
-            throw new InvalidRoomException("Room has no name");
-        }
-        if (room.getId() != null){
-            throw new InvalidRoomException("Id is already present");
-        }
-        return roomsRepository.save(room);
     }
 }

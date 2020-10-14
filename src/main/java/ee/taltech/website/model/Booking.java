@@ -36,6 +36,15 @@ public class Booking {
         this.paymentInfo = paymentInfo;
     }
 
+    public Booking(String name, String startDate, String endDate, Room room, String paymentInfo) {
+
+        this.name = name;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.room = room;
+        this.paymentInfo = paymentInfo;
+    }
+
     public String getPaymentInfo() {
         return paymentInfo;
     }

@@ -3,6 +3,8 @@ package ee.taltech.website.service;
 import ee.taltech.website.dto.RoomDto;
 import ee.taltech.website.exception.BookingNotFoundException;
 import ee.taltech.website.exception.InvalidBookingException;
+import ee.taltech.website.exception.InvalidSearchException;
+import ee.taltech.website.exception.RoomNotFoundException;
 import ee.taltech.website.model.Booking;
 import ee.taltech.website.model.DataToSearchBy;
 import ee.taltech.website.model.Room;
@@ -52,6 +54,7 @@ public class BookingsService {
             throw new InvalidBookingException("There is no information about the room");
         }
         Room roomBeingBooked = roomsService.findById(booking.getRoom().getId());
+        checkRoomExceptions(roomBeingBooked);
         if (bookedRoomsCount(booking.getRoom().getId(), booking.getStartDate(), booking.getEndDate())
                == roomBeingBooked.getAmount())  {
             throw new InvalidBookingException("No rooms available");
@@ -61,7 +64,9 @@ public class BookingsService {
 
 
     public RoomDto updateAvailabilityData(DataToSearchBy data) {
+        checkSearchExceptions(data);
         Room roomBeingBooked = roomsService.findById(data.getRoomId());
+        checkRoomExceptions(roomBeingBooked);
         int bookedRoomsCount = bookedRoomsCount(data.getRoomId(), data.getStartDate(), data.getEndDate());
         if (bookedRoomsCount == roomBeingBooked.getAmount())  {
             throw new InvalidBookingException("No rooms  available");
@@ -71,7 +76,26 @@ public class BookingsService {
     }
 
     public List<Booking> getBookingsByDate(DataToSearchBy data) {
+        checkSearchExceptions(data);
         return filterByDate(bookingsRepository.findAll().stream(), data.getStartDate(), data.getEndDate());
+    }
+
+    private void checkRoomExceptions(Room room) {
+        if (room == null) {
+            throw new RoomNotFoundException();
+        }
+    }
+
+    private void checkSearchExceptions(DataToSearchBy data) {
+        if (data.getRoomId() == null) {
+            throw new InvalidSearchException("No info about the room");
+        }
+        if (data.getStartDate() == null) {
+            throw new InvalidSearchException("No info about the startDate");
+        }
+        if (data.getEndDate() == null) {
+            throw new InvalidSearchException("No info about the endDate");
+        }
     }
 
     private int bookedRoomsCount(Long roomId, String startDate, String endDate) {
