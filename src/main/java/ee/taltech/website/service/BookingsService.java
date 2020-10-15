@@ -6,7 +6,7 @@ import ee.taltech.website.exception.InvalidBookingException;
 import ee.taltech.website.exception.InvalidSearchException;
 import ee.taltech.website.exception.RoomNotFoundException;
 import ee.taltech.website.model.Booking;
-import ee.taltech.website.model.DataToSearchBy;
+import ee.taltech.website.dto.DataToSearchBy;
 import ee.taltech.website.model.Room;
 import ee.taltech.website.repository.BookingsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,31 +40,29 @@ public class BookingsService {
             throw new InvalidBookingException("Insufficient data");
         }
         Room roomBeingBooked = roomsService.findById(booking.getRoom().getId());
-        checkRoomExceptions(roomBeingBooked, booking.getRoom().getId(), booking.getStartDate(), booking.getEndDate());
+        if (roomBeingBooked == null) {
+            throw new RoomNotFoundException();
+        }
+        if (bookedRoomsCount(booking.getRoom().getId(), booking.getStartDate(), booking.getEndDate())
+                == roomBeingBooked.getAmount()) {
+            throw new InvalidBookingException("No rooms  available");
+        }
         return bookingsRepository.save(booking);
     }
 
     public RoomDto updateAvailabilityData(DataToSearchBy data) {
         checkSearchExceptions(data);
         Room roomBeingBooked = roomsService.findById(data.getRoomId());
-        checkRoomExceptions(roomBeingBooked, data.getRoomId(), data.getStartDate(), data.getEndDate());
+        int bookedRoomsCount = bookedRoomsCount(data.getRoomId(), data.getStartDate(), data.getEndDate());
+        if (bookedRoomsCount == roomBeingBooked.getAmount())  {
+            throw new InvalidBookingException("No rooms available");
+        }
         return new RoomDto(data.getRoomId(), roomBeingBooked.getName(),
-                roomBeingBooked.getAmount());
-    }
+                roomBeingBooked.getAmount() - bookedRoomsCount);    }
 
     public List<Booking> getBookingsByDate(DataToSearchBy data) {
         checkSearchExceptions(data);
         return filterByDate(bookingsRepository.findAll().stream(), data.getStartDate(), data.getEndDate());
-    }
-
-    private void checkRoomExceptions(Room room, Long roomId, String startDate, String endDate) {
-        if (room == null) {
-            throw new RoomNotFoundException();
-        }
-        if (bookedRoomsCount(roomId, startDate, endDate)
-                == room.getAmount()) {
-            throw new InvalidBookingException("No rooms  available");
-        }
     }
 
     private void checkSearchExceptions(DataToSearchBy data) {

@@ -18,8 +18,8 @@ public class RoomsApplicationInit implements CommandLineRunner {
     public void run(String... args) throws Exception {
         List<Room> rooms = List.of(
                 new Room ("Standard Room", 5),
-                new Room( "Superior Room", 3),
-                new Room( "DeLux", 2)
+                new Room( "Superior Room", 4),
+                new Room( "Deluxe", 2)
         );
         roomsRepository.saveAll(rooms);
     }
