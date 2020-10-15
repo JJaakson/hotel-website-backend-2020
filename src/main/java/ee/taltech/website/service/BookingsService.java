@@ -51,31 +51,18 @@ public class BookingsService {
         return bookingsRepository.save(booking);
     }
 
-    public RoomDto sendAvailabilityData(DataToSearchBy data) {
-        checkSearchExceptions(data);
-        Room roomBeingBooked = roomsService.findById(data.getRoomId());
-        int bookedRoomsCount = bookedRoomsCount(data.getRoomId(), data.getStartDate(), data.getEndDate());
-        if (bookedRoomsCount == roomBeingBooked.getAmount())  {
-            throw new InvalidBookingException("No rooms available");
-        }
-        Period period = Period.between(LocalDate.parse(data.getStartDate()), LocalDate.parse(data.getEndDate()));
-        return new RoomDto(data.getRoomId(), roomBeingBooked.getName(),
-                roomBeingBooked.getAmount() - bookedRoomsCount,
-                roomBeingBooked.getCost() * (period.getDays() - 1));
-    }
-
     public List<Booking> getBookingsByDate(DataToSearchBy data) {
         checkSearchExceptions(data);
         return filterByDate(bookingsRepository.findAll().stream(), data.getStartDate(), data.getEndDate());
     }
 
-    private void checkSearchExceptions(DataToSearchBy data) {
+    public void checkSearchExceptions(DataToSearchBy data) {
         if (data.getRoomId() == null || data.getStartDate() == null || data.getEndDate() == null) {
             throw new InvalidSearchException("Data insufficient");
         }
     }
 
-    private int bookedRoomsCount(Long roomId, String startDate, String endDate) {
+    public int bookedRoomsCount(Long roomId, String startDate, String endDate) {
         return filterByDate(bookingsRepository.findAll().stream()
                 .filter(b -> b.getRoom().getId().intValue() == roomId.intValue()), startDate, endDate).size();
     }
