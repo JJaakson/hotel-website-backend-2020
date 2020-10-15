@@ -3,8 +3,10 @@ package ee.taltech.website.service;
 import ee.taltech.website.dto.RoomDto;
 import ee.taltech.website.exception.BookingNotFoundException;
 import ee.taltech.website.exception.InvalidBookingException;
+import ee.taltech.website.exception.InvalidSearchException;
+import ee.taltech.website.exception.RoomNotFoundException;
 import ee.taltech.website.model.Booking;
-import ee.taltech.website.model.DataToSearchBy;
+import ee.taltech.website.dto.DataToSearchBy;
 import ee.taltech.website.model.Room;
 import ee.taltech.website.repository.BookingsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,51 +35,45 @@ public class BookingsService {
     }
 
     public Booking save(Booking booking) {
-        if (booking.getId() != null) {
-            throw new InvalidBookingException("Id is already present");
-        }
-        if (booking.getName() == null) {
-            throw new InvalidBookingException("There is no name");
-        }
-        if (booking.getStartDate() == null) {
-            throw new InvalidBookingException("There is no startDate");
-        }
-        if (booking.getEndDate() == null) {
-            throw new InvalidBookingException("There is no startDate");
-        }
-        if (booking.getPaymentInfo() == null) {
-            throw new InvalidBookingException("There is no payment info");
-        }
-        if (booking.getRoom() == null) {
-            throw new InvalidBookingException("There is no information about the room");
+        if (booking.getId() != null || booking.getName() == null || booking.getStartDate() == null
+                || booking.getEndDate() == null || booking.getPaymentInfo() == null || booking.getRoom() == null) {
+            throw new InvalidBookingException("Insufficient data");
         }
         Room roomBeingBooked = roomsService.findById(booking.getRoom().getId());
+        if (roomBeingBooked == null) {
+            throw new RoomNotFoundException();
+        }
         if (bookedRoomsCount(booking.getRoom().getId(), booking.getStartDate(), booking.getEndDate())
-               == roomBeingBooked.getAmount())  {
-            throw new InvalidBookingException("No rooms available");
+                == roomBeingBooked.getAmount()) {
+            throw new InvalidBookingException("No rooms  available");
         }
         return bookingsRepository.save(booking);
     }
 
-
     public RoomDto updateAvailabilityData(DataToSearchBy data) {
+        checkSearchExceptions(data);
         Room roomBeingBooked = roomsService.findById(data.getRoomId());
         int bookedRoomsCount = bookedRoomsCount(data.getRoomId(), data.getStartDate(), data.getEndDate());
         if (bookedRoomsCount == roomBeingBooked.getAmount())  {
-            throw new InvalidBookingException("No rooms  available");
+            throw new InvalidBookingException("No rooms available");
         }
         return new RoomDto(data.getRoomId(), roomBeingBooked.getName(),
-                roomBeingBooked.getAmount() - bookedRoomsCount);
-    }
+                roomBeingBooked.getAmount() - bookedRoomsCount);    }
 
     public List<Booking> getBookingsByDate(DataToSearchBy data) {
+        checkSearchExceptions(data);
         return filterByDate(bookingsRepository.findAll().stream(), data.getStartDate(), data.getEndDate());
     }
 
+    private void checkSearchExceptions(DataToSearchBy data) {
+        if (data.getRoomId() == null || data.getStartDate() == null || data.getEndDate() == null) {
+            throw new InvalidSearchException("Data insufficient");
+        }
+    }
+
     private int bookedRoomsCount(Long roomId, String startDate, String endDate) {
-        Stream<Booking> bookingStreamByCorrectRooms = bookingsRepository.findAll().stream()
-                .filter(b -> b.getRoom().getId().intValue() == roomId.intValue());
-        return filterByDate(bookingStreamByCorrectRooms, startDate, endDate).size();
+        return filterByDate(bookingsRepository.findAll().stream()
+                .filter(b -> b.getRoom().getId().intValue() == roomId.intValue()), startDate, endDate).size();
     }
 
     private List<Booking> filterByDate(Stream<Booking> streamOfBookings, String start, String end) {
@@ -95,5 +91,4 @@ public class BookingsService {
                 || endDate.isEqual(LocalDate.parse(b.getStartDate())))
                 .collect(Collectors.toList());
     }
-
 }

@@ -23,9 +23,4 @@ public class RoomsController {
     public Room getRoom(@PathVariable Long id) {
         return roomsService.findById(id);
     }
-
-    @PostMapping
-    public Room saveRoom(@RequestBody Room room) {
-        return roomsService.save(room);
-    }
 }

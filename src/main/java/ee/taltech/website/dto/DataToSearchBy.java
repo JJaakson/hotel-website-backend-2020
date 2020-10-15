@@ -1,4 +1,4 @@
-package ee.taltech.website.model;
+package ee.taltech.website.dto;
 
 public class DataToSearchBy {
 

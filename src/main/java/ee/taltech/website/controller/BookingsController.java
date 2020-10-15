@@ -2,7 +2,7 @@ package ee.taltech.website.controller;
 
 import ee.taltech.website.dto.RoomDto;
 import ee.taltech.website.model.Booking;
-import ee.taltech.website.model.DataToSearchBy;
+import ee.taltech.website.dto.DataToSearchBy;
 import ee.taltech.website.service.BookingsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -32,7 +32,7 @@ public class BookingsController {
     }
 
     @PutMapping
-    public RoomDto updateAvailabilityData(@RequestBody DataToSearchBy data) {
+    public RoomDto getAvailabilityData(@RequestBody DataToSearchBy data) {
         return bookingsService.updateAvailabilityData(data);
     }
 
