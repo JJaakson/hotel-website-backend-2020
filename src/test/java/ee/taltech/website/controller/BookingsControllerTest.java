@@ -41,6 +41,8 @@ class BookingsControllerTest {
         LocalDate twoDaysLater = now.plusDays(2L);
         ResponseEntity<Booking> exchangeAddedBooking = utilities.addBooking(testRestTemplate, "Pille",
                 now.toString(), twoDaysLater.toString(), room, "Paypal");
+        utilities.addBooking(testRestTemplate, "Kalle",
+                now.toString(), twoDaysLater.toString(), room, "Cash");
         Booking addedBooking = utilities.assertOk(exchangeAddedBooking);
         assertEquals("Pille", addedBooking.getName());
         assertEquals(now.toString(), addedBooking.getStartDate());
@@ -49,25 +51,8 @@ class BookingsControllerTest {
         assertEquals(room.getId(), addedBooking.getRoom().getId());
         List<Booking> bookings = utilities.getListFromExhange(testRestTemplate, LIST_OF_BOOKINGS, "/bookings");
         assertFalse(bookings.isEmpty());
-        assertEquals(1, bookings.size());
+        assertEquals(2, bookings.size());
         assertEquals(addedBooking.getId(), bookings.get(0).getId());
-    }
-
-    @Test
-    void query_for_availability_data() {
-        List<Room> rooms = utilities.getListFromExhange(testRestTemplate, LIST_OF_ROOMS, "/rooms");
-        assertFalse(rooms.isEmpty());
-        Room room = rooms.get(0);
-        LocalDate now = LocalDate.now();LocalDate twoDaysLater = now.plusDays(2L);
-        utilities.addBooking(testRestTemplate, "Kalle",
-                now.toString(), twoDaysLater.toString(), room, "Cash");
-        DataToSearchBy data = new DataToSearchBy(room.getId(), now.toString(), now.plusDays(5L).toString());
-        ResponseEntity<RoomDto> exchangeData = testRestTemplate.exchange("/bookings",
-                HttpMethod.PUT, new HttpEntity<>(data), RoomDto.class);
-        RoomDto receivedData = utilities.assertOk(exchangeData);
-        assertEquals(room.getId(), receivedData.getId());
-        assertEquals(room.getAmount() - 2, receivedData.getAmount());
-        assertEquals(room.getName(), receivedData.getName());
     }
 
     @Test
