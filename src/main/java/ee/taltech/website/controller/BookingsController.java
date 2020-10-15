@@ -34,5 +34,4 @@ public class BookingsController {
     public List<Booking> getBookingsByDate(@RequestBody DataToSearchBy data) {
         return bookingsService.getBookingsByDate(data);
     }
-
 }

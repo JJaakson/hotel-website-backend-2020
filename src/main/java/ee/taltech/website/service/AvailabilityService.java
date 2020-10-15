@@ -3,12 +3,10 @@ package ee.taltech.website.service;
 import ee.taltech.website.dto.DataToSearchBy;
 import ee.taltech.website.dto.RoomDto;
 import ee.taltech.website.exception.InvalidBookingException;
-import ee.taltech.website.model.Booking;
 import ee.taltech.website.model.Room;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.persistence.SecondaryTable;
 import java.time.LocalDate;
 import java.time.Period;
 

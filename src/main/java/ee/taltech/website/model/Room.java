@@ -27,15 +27,15 @@ public class Room {
         this.cost = cost;
     }
 
+    public Room() {
+    }
+
     public Integer getCost() {
         return cost;
     }
 
     public void setCost(Integer cost) {
         this.cost = cost;
-    }
-
-    public Room() {
     }
 
     public String getName() {
