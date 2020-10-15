@@ -1,6 +1,8 @@
-package ee.taltech.website.controller.tests;
+package ee.taltech.website.controller;
 
-import ee.taltech.website.controller.utility.TestingUtility;
+import ee.taltech.website.utility.TestingUtility;
+import ee.taltech.website.dto.DataToSearchBy;
+import ee.taltech.website.dto.RoomDto;
 import ee.taltech.website.model.Booking;
 import ee.taltech.website.model.Room;
 import org.junit.jupiter.api.Test;
@@ -8,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 
 import java.time.LocalDate;
@@ -22,7 +26,7 @@ class BookingsControllerTest {
             new ParameterizedTypeReference<>() { };
     private static final ParameterizedTypeReference<List<Room>> LIST_OF_ROOMS =
             new ParameterizedTypeReference<>() { };
-    private static TestingUtility utilities = new TestingUtility();
+    private static final TestingUtility utilities = new TestingUtility();
 
     @Autowired
     private TestRestTemplate testRestTemplate;
@@ -50,26 +54,27 @@ class BookingsControllerTest {
     }
 
     @Test
-    void query_add_multiple_and_list_of_bookings() {
+    void query_for_availability_data() {
         List<Room> rooms = utilities.getListFromExhange(testRestTemplate, LIST_OF_ROOMS, "/rooms");
         assertFalse(rooms.isEmpty());
         Room room = rooms.get(0);
-        LocalDate now = LocalDate.now();
-        LocalDate twoDaysLater = now.plusDays(2L);
-        ResponseEntity<Booking> exchangeAddedBooking_1 = utilities.addBooking(testRestTemplate, "Pille",
-                now.toString(), twoDaysLater.toString(), room, "Paypal");
-        Booking addedBooking_1 = utilities.assertOk(exchangeAddedBooking_1);
-        ResponseEntity<Booking> exchangeAddedBooking_2 = utilities.addBooking(testRestTemplate, "Maili",
-                now.toString(), twoDaysLater.toString(), room, "MasterCard");
-        Booking addedBooking_2 = utilities.assertOk(exchangeAddedBooking_2);
-        ResponseEntity<Booking> exchangeAddedBooking_3 = utilities.addBooking(testRestTemplate, "Kalle",
+        LocalDate now = LocalDate.now();LocalDate twoDaysLater = now.plusDays(2L);
+        utilities.addBooking(testRestTemplate, "Kalle",
                 now.toString(), twoDaysLater.toString(), room, "Cash");
-        Booking addedBooking_3 = utilities.assertOk(exchangeAddedBooking_3);
-        List<Booking> bookings = utilities.getListFromExhange(testRestTemplate, LIST_OF_BOOKINGS, "/bookings");
-        assertFalse(bookings.isEmpty());
-        assertEquals(4, bookings.size()); // expected = 3 if test is run individually
-        assertEquals(addedBooking_1.getId(), bookings.get(1).getId()); // actualIndex= 0 if test is run individually
-        assertEquals(addedBooking_2.getId(), bookings.get(2).getId()); // actualIndex= 1 if test is run individually
-        assertEquals(addedBooking_3.getId(), bookings.get(3).getId()); // actualIndex= 2 if test is run individually
+        DataToSearchBy data = new DataToSearchBy(room.getId(), now.toString(), now.plusDays(5L).toString());
+        ResponseEntity<RoomDto> exchangeData = testRestTemplate.exchange("/bookings",
+                HttpMethod.PUT, new HttpEntity<>(data), RoomDto.class);
+        RoomDto receivedData = utilities.assertOk(exchangeData);
+        assertEquals(room.getId(), receivedData.getId());
+        assertEquals(room.getAmount() - 2, receivedData.getAmount());
+        assertEquals(room.getName(), receivedData.getName());
+    }
+
+    @Test
+    void query_for_getting_by_id() {
+        Booking booking = utilities.assertOk(testRestTemplate.exchange("/bookings/4",
+                HttpMethod.GET, null, Booking.class));
+        assertEquals("Pille", booking.getName());
+        assertEquals(LocalDate.now().toString(), booking.getStartDate());
     }
 }

@@ -1,4 +1,4 @@
-package ee.taltech.website.controller.utility;
+package ee.taltech.website.utility;
 
 import ee.taltech.website.model.Booking;
 import ee.taltech.website.model.Room;
