@@ -1,4 +1,4 @@
-package ee.taltech.website.controller;
+package ee.taltech.website.controller.tests;
 
 import ee.taltech.website.model.Room;
 import org.junit.jupiter.api.Test;
