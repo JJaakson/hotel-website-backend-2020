@@ -1,8 +1,6 @@
 package ee.taltech.website.controller;
 
 import ee.taltech.website.utility.TestingUtility;
-import ee.taltech.website.dto.DataToSearchBy;
-import ee.taltech.website.dto.RoomDto;
 import ee.taltech.website.model.Booking;
 import ee.taltech.website.model.Room;
 import org.junit.jupiter.api.Test;
@@ -10,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.core.ParameterizedTypeReference;
-import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 

@@ -1,6 +1,5 @@
 package ee.taltech.website.service;
 
-import ee.taltech.website.dto.RoomDto;
 import ee.taltech.website.exception.BookingNotFoundException;
 import ee.taltech.website.exception.InvalidBookingException;
 import ee.taltech.website.exception.InvalidSearchException;
@@ -13,7 +12,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
-import java.time.Period;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -41,9 +39,6 @@ public class BookingsService {
             throw new InvalidBookingException("Insufficient data");
         }
         Room roomBeingBooked = roomsService.findById(booking.getRoom().getId());
-        if (roomBeingBooked == null) {
-            throw new RoomNotFoundException();
-        }
         if (bookedRoomsCount(booking.getRoom().getId(), booking.getStartDate(), booking.getEndDate())
                 == roomBeingBooked.getAmount()) {
             throw new InvalidBookingException("No rooms  available");
