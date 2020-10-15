@@ -32,8 +32,8 @@ public class BookingsController {
     }
 
     @PutMapping
-    public RoomDto getAvailabilityData(@RequestBody DataToSearchBy data) {
-        return bookingsService.updateAvailabilityData(data);
+    public RoomDto sendAvailabilityData(@RequestBody DataToSearchBy data) {
+        return bookingsService.sendAvailabilityData(data);
     }
 
     @PutMapping("/datedata")

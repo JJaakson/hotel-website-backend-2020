@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+import java.time.Period;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -50,15 +51,18 @@ public class BookingsService {
         return bookingsRepository.save(booking);
     }
 
-    public RoomDto updateAvailabilityData(DataToSearchBy data) {
+    public RoomDto sendAvailabilityData(DataToSearchBy data) {
         checkSearchExceptions(data);
         Room roomBeingBooked = roomsService.findById(data.getRoomId());
         int bookedRoomsCount = bookedRoomsCount(data.getRoomId(), data.getStartDate(), data.getEndDate());
         if (bookedRoomsCount == roomBeingBooked.getAmount())  {
             throw new InvalidBookingException("No rooms available");
         }
+        Period period = Period.between(LocalDate.parse(data.getStartDate()), LocalDate.parse(data.getEndDate()));
         return new RoomDto(data.getRoomId(), roomBeingBooked.getName(),
-                roomBeingBooked.getAmount() - bookedRoomsCount);    }
+                roomBeingBooked.getAmount() - bookedRoomsCount,
+                roomBeingBooked.getCost() * (period.getDays() - 1));
+    }
 
     public List<Booking> getBookingsByDate(DataToSearchBy data) {
         checkSearchExceptions(data);
