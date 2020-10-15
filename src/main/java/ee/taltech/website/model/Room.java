@@ -13,11 +13,13 @@ public class Room {
     private String name;
     private Integer amount;
     private Integer cost;
+    private String descryption;
 
-    public Room(String name, Integer amount, Integer cost) {
+    public Room(String name, Integer amount, Integer cost, String descryption) {
         this.name = name;
         this.amount = amount;
         this.cost = cost;
+        this.descryption = descryption;
     }
 
     public Room(Long id, String name, Integer amount, Integer cost) {
@@ -28,6 +30,14 @@ public class Room {
     }
 
     public Room() {
+    }
+
+    public String getDescryption() {
+        return descryption;
+    }
+
+    public void setDescryption(String descryption) {
+        this.descryption = descryption;
     }
 
     public Integer getCost() {
