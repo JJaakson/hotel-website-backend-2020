@@ -1,5 +1,6 @@
 package ee.taltech.website.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -13,6 +14,7 @@ public class Room {
     private String name;
     private Integer amount;
     private Integer cost;
+    @Column(columnDefinition="varchar(1000)")
     private String descryption;
 
     public Room(String name, Integer amount, Integer cost, String descryption) {
