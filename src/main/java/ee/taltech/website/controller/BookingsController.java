@@ -1,6 +1,5 @@
 package ee.taltech.website.controller;
 
-import ee.taltech.website.dto.RoomDto;
 import ee.taltech.website.model.Booking;
 import ee.taltech.website.dto.DataToSearchBy;
 import ee.taltech.website.service.BookingsService;
@@ -26,19 +25,13 @@ public class BookingsController {
         return bookingsService.findById(id);
     }
 
-    @PostMapping()
+    @PostMapping
     public Booking saveBooking(@RequestBody Booking booking) {
         return bookingsService.save(booking);
     }
 
     @PutMapping
-    public RoomDto getAvailabilityData(@RequestBody DataToSearchBy data) {
-        return bookingsService.updateAvailabilityData(data);
-    }
-
-    @PutMapping("/datedata")
     public List<Booking> getBookingsByDate(@RequestBody DataToSearchBy data) {
         return bookingsService.getBookingsByDate(data);
     }
-
 }

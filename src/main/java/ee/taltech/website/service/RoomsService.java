@@ -14,7 +14,7 @@ public class RoomsService {
     @Autowired
     private RoomsRepository roomsRepository;
 
-    public List<Room> findAll(String name) {
+    public List<Room> findAll() {
         return roomsRepository.findAll();
     }
 

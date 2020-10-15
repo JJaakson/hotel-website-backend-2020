@@ -45,15 +45,15 @@ public class Booking {
         this.paymentInfo = paymentInfo;
     }
 
+    public Booking() {
+    }
+
     public String getPaymentInfo() {
         return paymentInfo;
     }
 
     public void setPaymentInfo(String paymentInfo) {
         this.paymentInfo = paymentInfo;
-    }
-
-    public Booking() {
     }
 
     public Long getId() {

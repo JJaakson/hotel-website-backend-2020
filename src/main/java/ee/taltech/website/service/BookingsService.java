@@ -1,6 +1,5 @@
 package ee.taltech.website.service;
 
-import ee.taltech.website.dto.RoomDto;
 import ee.taltech.website.exception.BookingNotFoundException;
 import ee.taltech.website.exception.InvalidBookingException;
 import ee.taltech.website.exception.InvalidSearchException;
@@ -40,9 +39,6 @@ public class BookingsService {
             throw new InvalidBookingException("Insufficient data");
         }
         Room roomBeingBooked = roomsService.findById(booking.getRoom().getId());
-        if (roomBeingBooked == null) {
-            throw new RoomNotFoundException();
-        }
         if (bookedRoomsCount(booking.getRoom().getId(), booking.getStartDate(), booking.getEndDate())
                 == roomBeingBooked.getAmount()) {
             throw new InvalidBookingException("No rooms  available");
@@ -50,28 +46,18 @@ public class BookingsService {
         return bookingsRepository.save(booking);
     }
 
-    public RoomDto updateAvailabilityData(DataToSearchBy data) {
-        checkSearchExceptions(data);
-        Room roomBeingBooked = roomsService.findById(data.getRoomId());
-        int bookedRoomsCount = bookedRoomsCount(data.getRoomId(), data.getStartDate(), data.getEndDate());
-        if (bookedRoomsCount == roomBeingBooked.getAmount())  {
-            throw new InvalidBookingException("No rooms available");
-        }
-        return new RoomDto(data.getRoomId(), roomBeingBooked.getName(),
-                roomBeingBooked.getAmount() - bookedRoomsCount);    }
-
     public List<Booking> getBookingsByDate(DataToSearchBy data) {
         checkSearchExceptions(data);
         return filterByDate(bookingsRepository.findAll().stream(), data.getStartDate(), data.getEndDate());
     }
 
-    private void checkSearchExceptions(DataToSearchBy data) {
+    public void checkSearchExceptions(DataToSearchBy data) {
         if (data.getRoomId() == null || data.getStartDate() == null || data.getEndDate() == null) {
             throw new InvalidSearchException("Data insufficient");
         }
     }
 
-    private int bookedRoomsCount(Long roomId, String startDate, String endDate) {
+    public int bookedRoomsCount(Long roomId, String startDate, String endDate) {
         return filterByDate(bookingsRepository.findAll().stream()
                 .filter(b -> b.getRoom().getId().intValue() == roomId.intValue()), startDate, endDate).size();
     }

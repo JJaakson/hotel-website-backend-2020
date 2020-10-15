@@ -15,8 +15,8 @@ public class RoomsController {
     private RoomsService roomsService;
 
     @GetMapping
-    public List<Room> getRooms(@RequestParam(value = "name", required = false) String name) {
-        return roomsService.findAll(name);
+    public List<Room> getRooms() {
+        return roomsService.findAll();
     }
 
     @GetMapping("{id}")
