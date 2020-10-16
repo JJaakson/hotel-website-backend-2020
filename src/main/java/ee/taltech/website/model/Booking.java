@@ -37,7 +37,6 @@ public class Booking {
     }
 
     public Booking(String name, String startDate, String endDate, Room room, String paymentInfo) {
-
         this.name = name;
         this.startDate = startDate;
         this.endDate = endDate;
