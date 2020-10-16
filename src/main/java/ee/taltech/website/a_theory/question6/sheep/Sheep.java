@@ -1,14 +1,11 @@
-package ee.taltech.website.a_theory.question6.sheep.model;
+package ee.taltech.website.a_theory.question6.sheep;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-@Entity
 public class Sheep {
 
-    @Id
-    @GeneratedValue
     private Long id;
     private String name;
     private Integer age;

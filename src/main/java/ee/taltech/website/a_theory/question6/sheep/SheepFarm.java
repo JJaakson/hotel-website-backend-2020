@@ -1,15 +1,20 @@
-package ee.taltech.website.a_theory.question6.sheep.controller;
+package ee.taltech.website.a_theory.question6.sheep;
 
-import ee.taltech.website.a_theory.question6.sheep.model.Sheep;
-import ee.taltech.website.a_theory.question6.sheep.service.SheepService;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @RequestMapping("sheep")
 @RestController
+@SpringBootApplication
 public class SheepFarm {
+
+    private final List<Sheep> sheepList = new ArrayList<>();
+    private int indexCounter = 1;
 
     //todo for question 6 there are 4 assignments in total
     // Each person has to do only 1. So 2 person team has to do 2 different ones, 3 person - 3, 4 person - 4.
@@ -39,22 +44,23 @@ public class SheepFarm {
 
     //todo here are some examples of empty methods
 
-    @Autowired
-    private SheepService sheepService;
-
     @PostMapping
     public Sheep saveSheep(@RequestBody Sheep sheep) {
-        return sheepService.save(sheep);
+        sheep.setId((long) (indexCounter));
+        indexCounter ++;
+        sheepList.add(sheep);
+        return sheep;
     }
 
     @DeleteMapping("{id}")
     public void deleteSheep(@PathVariable Long id) {
-        sheepService.delete(id);
+        Optional<Sheep> foundSheep = sheepList.stream().filter(s -> s.getId().equals(id)).findAny();
+        foundSheep.ifPresent(sheepList::remove);
     }
 
     @GetMapping("{id}")
-    public Sheep getSheep(@PathVariable Long id) {
-        return sheepService.findById(id);
+    public Optional<Sheep> getSheep(@PathVariable Long id) {
+        return sheepList.stream().filter(s -> s.getId().equals(id)).findAny();
     }
 
     List<Sheep> emptyMethodReturnList(){
@@ -66,6 +72,10 @@ public class SheepFarm {
     }
 
     void emptyMethodVoid(){
-
     }
+
+    public static void main(String[] args) {
+        SpringApplication.run(SheepFarm.class, args);
+    }
+
 }
