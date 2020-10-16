@@ -1,7 +1,14 @@
-package ee.taltech.website.a_theory.question6.sheep;
+package ee.taltech.website.a_theory.question6.sheep.controller;
+
+import ee.taltech.website.a_theory.question6.sheep.model.Sheep;
+import ee.taltech.website.a_theory.question6.sheep.service.SheepService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@RequestMapping("sheep")
+@RestController
 public class SheepFarm {
 
     //todo for question 6 there are 4 assignments in total
@@ -31,6 +38,25 @@ public class SheepFarm {
     // That's it. Can you do that for me?
 
     //todo here are some examples of empty methods
+
+    @Autowired
+    private SheepService sheepService;
+
+    @PostMapping
+    public Sheep saveSheep(@RequestBody Sheep sheep) {
+        return sheepService.save(sheep);
+    }
+
+    @DeleteMapping("{id}")
+    public void deleteSheep(@PathVariable Long id) {
+        sheepService.delete(id);
+    }
+
+    @GetMapping("{id}")
+    public Sheep getSheep(@PathVariable Long id) {
+        return sheepService.findById(id);
+    }
+
     List<Sheep> emptyMethodReturnList(){
         return List.of();
     }
