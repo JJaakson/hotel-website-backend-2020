@@ -1,8 +1,20 @@
 package ee.taltech.website.a_theory.question6.chocolate;
 
-import java.util.List;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+
+
+@RequestMapping("cakes")
+@RestController
+@SpringBootApplication
 public class Chocolate {
+
+    private final List<Cake> dataBase = new ArrayList<>();
+
 
     //todo for question 6 there are 4 assignments in total
     // Each person has to do only 1. So 2 person team has to do 2 different ones, 3 person - 3, 4 person - 4.
@@ -32,15 +44,66 @@ public class Chocolate {
 
 
     //todo here are some examples of empty methods
-    List<Cake> emptyMethodReturnList(){
+
+    @GetMapping
+    public List<Cake> getCakes() {
+        return dataBase;
+    }
+
+
+    @GetMapping("{topping}")
+    public Optional<List<Cake>> getCakesByToppings(@RequestParam String topping) {
+        List<Cake> cakes = new ArrayList<>();
+        for (Cake cake : dataBase) {
+            for (String topping1 : cake.getToppings()) {
+                if (topping1.equals(topping)) {
+                    cakes.add(cake);
+                }
+            }
+        }
+        return Optional.of(cakes);
+    }
+
+    @GetMapping("{ingredient}")
+    public Optional<List<Cake>> getCakesByIngredients(@RequestParam String ingredient) {
+        List<Cake> cakes = new ArrayList<>();
+        for (Cake cake : dataBase) {
+            for (String ingredient1 : cake.getIngredients()) {
+                if (ingredient1.equals(ingredient)) {
+                    cakes.add(cake);
+                }
+            }
+        }
+        return Optional.of(cakes);
+    }
+
+    @PostMapping
+    public Cake saveCake(@RequestBody Cake cake) {
+        dataBase.add(cake);
+        return cake;
+    }
+
+    @PutMapping
+    public Cake updateCake(@RequestBody Cake cake) {
+        for (Cake cake1 : dataBase) {
+            if (cake1.getId().equals(cake.getId())) {
+                cake1.setIngredients(cake.getIngredients());
+                cake1.setSweetness(cake.getSweetness());
+                cake1.setToppings(cake.getToppings());
+                cake1.setSize(cake.getSize());
+            }
+        }
+        return cake;
+    }
+
+    List<Cake> emptyMethodReturnList() {
         return List.of();
     }
 
-    Cake emptyMethodReturn1(){
+    Cake emptyMethodReturn1() {
         return new Cake();
     }
 
-    void emptyMethodVoid(){
-
+    void emptyMethodVoid() {
     }
 }
