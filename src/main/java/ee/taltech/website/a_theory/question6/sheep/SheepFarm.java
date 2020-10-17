@@ -59,7 +59,7 @@ public class SheepFarm {
     }
 
     @GetMapping("{id}")
-    public Optional<Sheep> getSheep(@PathVariable Long id) {
+     Optional<Sheep> getSheep(@PathVariable Long id) {
         return sheepList.stream().filter(s -> s.getId().equals(id)).findAny();
     }
 
