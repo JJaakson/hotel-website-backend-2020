@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+import java.time.Period;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -30,7 +31,10 @@ public class BookingsService {
     }
 
     public Booking findById(Long id) {
-        return bookingsRepository.findById(id).orElseThrow(BookingNotFoundException::new);
+        Booking booking = bookingsRepository.findById(id).orElseThrow(BookingNotFoundException::new);
+        Period period = Period.between(LocalDate.parse(booking.getStartDate()), LocalDate.parse(booking.getEndDate()));
+        booking.getRoom().setCost(period.getDays() * booking.getRoom().getCost());
+        return booking;
     }
 
     public Booking save(Booking booking) {
