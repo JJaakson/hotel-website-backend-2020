@@ -14,7 +14,7 @@ public class Compilation {
     //todo p2
     // Name 2 benefits of compilation?
     // 1: Already compiled program, when run is faster than a program that is translated at run time.
-    // 2: ???????????????????????????????
+    // 2: All errors are displayed after the process.
 
     //todo p3
     // Name 1 disadvantage of compilation?
