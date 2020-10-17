@@ -24,5 +24,6 @@ public class ApplicationLayers {
     // What is the difference between Entity and Dto? What is same between them?
     // Answer: An Entity is defined only for the purpose of storing it in a database.
     // DTO is the class we use for all operations other than database-related ones.
+    // DTO and Entity hold the same information.
 
 }
