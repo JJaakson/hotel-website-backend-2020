@@ -7,7 +7,7 @@ plugins {
 
 apply plugin: 'jacoco'
 
-group 'ee.taltech.website'
+group 'ee.taltech'
 version '1.0-SNAPSHOT'
 sourceCompatibility = '11'
 
@@ -58,3 +58,8 @@ jacocoTestCoverageVerification {
         }
     }
 }
+
+bootJar {
+    archiveFileName = 'hotel-trivago.jar'
+}
+
