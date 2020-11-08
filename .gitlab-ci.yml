@@ -1,6 +1,5 @@
 stages:
   - build
-  - test
   - deploy
 
 before_script:
@@ -20,22 +19,16 @@ build rooms:
   script:
     - ./gradlew assemble
 
-test rooms:
-  stage: test
-  tags:
-    - rooms
-  script:
-    - ./gradlew check
-
 deploy rooms:
   stage: deploy
   only:
     refs:
-      - master
+      - develop
+      - feature/ci-cd
   tags:
     - rooms
   script:
     - mkdir -p ~/api-deployment # mkdir make folder api-deployment ~/ is under current user directory so for gitlab it would be /home/gitlab/api-deployment
     - rm -rf ~/api-deployment/* # rm remove -rf is recursive files from api-deployment
     - cp -r build/libs/. ~/api-deployment # cp - copy build/libs is where
-#    - sudo service heroes restart  # this requires sudo rights for gitlab user
+    - sudo service rooms restart  # this requires sudo rights for gitlab user
