@@ -32,6 +32,7 @@ deploy rooms:
   only:
     refs:
       - master
+      - feature/ci-cd
   tags:
     - rooms
   script:
