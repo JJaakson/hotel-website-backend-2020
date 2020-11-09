@@ -1,26 +1,91 @@
-ee/taltech/website/WebsiteApplicationInit.java
- ee.taltech.website.WebsiteApplicationInit
-ee/taltech/website/config/SwaggerConfig.java
- ee.taltech.website.config.SwaggerConfig
-ee/taltech/website/WebsiteApplication.java
- ee.taltech.website.WebsiteApplication
-ee/taltech/website/repository/ItemRepository.java
- ee.taltech.website.repository.ItemRepository
-ee/taltech/website/exception/RoomNotFoundException.java
- ee.taltech.website.exception.RoomNotFoundException
-ee/taltech/website/controller/IndexController.java
- ee.taltech.website.controller.IndexController
-ee/taltech/website/exception/InvalidRoomException.java
- ee.taltech.website.exception.InvalidRoomException
-ee/taltech/website/service/RoomsService.java
- ee.taltech.website.service.RoomsService
-ee/taltech/website/controller/TestController.java
- ee.taltech.website.controller.TestController
-ee/taltech/website/model/Room.java
- ee.taltech.website.model.Room
-ee/taltech/website/repository/RoomsRepository.java
- ee.taltech.website.repository.RoomsRepository
+ee/taltech/website/exception/InvalidBookingException.java
+ ee.taltech.website.exception.InvalidBookingException
+ee/taltech/website/a_theory/question6/vineyard/Wine.java
+ ee.taltech.website.a_theory.question6.vineyard.Wine
+ee/taltech/website/a_theory/question2/Gradle.java
+ ee.taltech.website.a_theory.question2.Gradle
 ee/taltech/website/controller/RoomsController.java
  ee.taltech.website.controller.RoomsController
 ee/taltech/website/RoomsApplicationInit.java
  ee.taltech.website.RoomsApplicationInit
+ee/taltech/website/a_theory/question6/vineyard/Vineyard.java
+ ee.taltech.website.a_theory.question6.vineyard.Vineyard
+ee/taltech/website/controller/BookingsController.java
+ ee.taltech.website.controller.BookingsController
+ee/taltech/website/exception/InvalidRoomException.java
+ ee.taltech.website.exception.InvalidRoomException
+ee/taltech/website/a_theory/question5/ApplicationLayers.java
+ ee.taltech.website.a_theory.question5.ApplicationLayers
+ee/taltech/website/service/RoomsService.java
+ ee.taltech.website.service.RoomsService
+ee/taltech/website/a_theory/question6/sheep/Sheep.java
+ ee.taltech.website.a_theory.question6.sheep.Sheep
+ee/taltech/website/dto/RoomDto.java
+ ee.taltech.website.dto.RoomDto
+ee/taltech/website/a_theory/question1/Compilation.java
+ ee.taltech.website.a_theory.question1.Compilation
+ee/taltech/website/exception/RoomNotFoundException.java
+ ee.taltech.website.exception.RoomNotFoundException
+ee/taltech/website/a_theory/question3/Abstraction.java
+ ee.taltech.website.a_theory.question3.Abstraction
+ ee.taltech.website.a_theory.question3.Abstraction$Cat
+ee/taltech/website/exception/InvalidSearchException.java
+ ee.taltech.website.exception.InvalidSearchException
+ee/taltech/website/a_theory/question6/art/Painting.java
+ ee.taltech.website.a_theory.question6.art.Painting
+ee/taltech/website/service/AvailabilityService.java
+ ee.taltech.website.service.AvailabilityService
+ee/taltech/website/controller/AvailabilityDataController.java
+ ee.taltech.website.controller.AvailabilityDataController
+ee/taltech/website/a_theory/question4/DependencyInjection.java
+ ee.taltech.website.a_theory.question4.DependencyInjection
+ee/taltech/website/model/Room.java
+ ee.taltech.website.model.Room
+ee/taltech/website/model/Booking.java
+ ee.taltech.website.model.Booking
+ee/taltech/website/dto/DataToSearchBy.java
+ ee.taltech.website.dto.DataToSearchBy
+ee/taltech/website/a_theory/question6/sheep/SheepFarm.java
+ ee.taltech.website.a_theory.question6.sheep.SheepFarm
+ee/taltech/website/a_theory/question6/chocolate/Chocolate.java
+ ee.taltech.website.a_theory.question6.chocolate.Chocolate
+ee/taltech/website/WebsiteApplication.java
+ ee.taltech.website.WebsiteApplication
+ee/taltech/website/a_theory/question6/art/ArtCollector.java
+ ee.taltech.website.a_theory.question6.art.ArtCollector
+ee/taltech/website/exception/BookingNotFoundException.java
+ ee.taltech.website.exception.BookingNotFoundException
+ee/taltech/website/config/SwaggerConfig.java
+ ee.taltech.website.config.SwaggerConfig
+ee/taltech/website/a_theory/question6/chocolate/Cake.java
+ ee.taltech.website.a_theory.question6.chocolate.Cake
+ee/taltech/website/service/BookingsService.java
+ ee.taltech.website.service.BookingsService
+ee/taltech/website/repository/BookingsRepository.java
+ ee.taltech.website.repository.BookingsRepository
+ee/taltech/website/repository/RoomsRepository.java
+ ee.taltech.website.repository.RoomsRepository
+ee/taltech/website/a_theory/question10/DBaaS.java
+ ee.taltech.website.a_theory.question10.DBaaS
+ee/taltech/website/a_theory/question11/Nr4isI.java
+ ee.taltech.website.a_theory.question11.Nr4isI
+ee/taltech/website/a_theory/question11/Nr1isS.java
+ ee.taltech.website.a_theory.question11.Nr1isS
+ ee.taltech.website.a_theory.question11.PayCalculator
+ ee.taltech.website.a_theory.question11.User
+ ee.taltech.website.a_theory.question11.UserServiceAfter
+ ee.taltech.website.a_theory.question11.UserServiceBefore
+ee/taltech/website/a_theory/question11/Nr3isL.java
+ ee.taltech.website.a_theory.question11.Nr3isL
+ee/taltech/website/a_theory/question11/FirstReadMeSOLID.java
+ ee.taltech.website.a_theory.question11.FirstReadMeSOLID
+ee/taltech/website/a_theory/question11/Nr2isO.java
+ ee.taltech.website.a_theory.question11.Nr2isO
+ee/taltech/website/a_theory/question9/Docker.java
+ ee.taltech.website.a_theory.question9.Docker
+ee/taltech/website/a_theory/question8/CD.java
+ ee.taltech.website.a_theory.question8.CD
+ee/taltech/website/a_theory/question7/CI.java
+ ee.taltech.website.a_theory.question7.CI
+ee/taltech/website/a_theory/question11/Nr5isD.java
+ ee.taltech.website.a_theory.question11.Nr5isD

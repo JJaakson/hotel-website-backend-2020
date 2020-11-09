@@ -1,5 +1,6 @@
 stages:
   - build
+  - test
   - deploy
 
 before_script:
@@ -19,12 +20,18 @@ build rooms:
   script:
     - ./gradlew assemble
 
+test rooms:
+  stage: test
+  tags:
+    - rooms
+  script:
+    - ./gradlew check
+
 deploy rooms:
   stage: deploy
   only:
     refs:
-      - develop
-      - feature/ci-cd
+      - master
   tags:
     - rooms
   script:

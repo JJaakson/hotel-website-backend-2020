@@ -74,8 +74,4 @@ public class SheepFarm {
     void emptyMethodVoid(){
     }
 
-    public static void main(String[] args) {
-        SpringApplication.run(SheepFarm.class, args);
-    }
-
 }

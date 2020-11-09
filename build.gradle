@@ -7,7 +7,7 @@ plugins {
 
 apply plugin: 'jacoco'
 
-group 'ee.taltech.website'
+group 'ee.taltech'
 version '1.0-SNAPSHOT'
 sourceCompatibility = '11'
 
@@ -27,11 +27,6 @@ dependencies {
     testImplementation('org.springframework.boot:spring-boot-starter-test') {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
     }
-}
-
-test {
-    useJUnitPlatform()
-    finalizedBy jacocoTestReport // report is always generated after tests run
 }
 
 jacocoTestReport {
@@ -58,3 +53,13 @@ jacocoTestCoverageVerification {
         }
     }
 }
+
+test {
+    useJUnitPlatform()
+    finalizedBy jacocoTestReport // report is always generated after tests run
+}
+
+bootJar {
+    archiveFileName = 'hotel-trivago-backend.jar'
+}
+
