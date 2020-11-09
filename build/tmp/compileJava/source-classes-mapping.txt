@@ -65,3 +65,27 @@ ee/taltech/website/repository/BookingsRepository.java
  ee.taltech.website.repository.BookingsRepository
 ee/taltech/website/repository/RoomsRepository.java
  ee.taltech.website.repository.RoomsRepository
+ee/taltech/website/a_theory/question10/DBaaS.java
+ ee.taltech.website.a_theory.question10.DBaaS
+ee/taltech/website/a_theory/question11/Nr4isI.java
+ ee.taltech.website.a_theory.question11.Nr4isI
+ee/taltech/website/a_theory/question11/Nr1isS.java
+ ee.taltech.website.a_theory.question11.Nr1isS
+ ee.taltech.website.a_theory.question11.PayCalculator
+ ee.taltech.website.a_theory.question11.User
+ ee.taltech.website.a_theory.question11.UserServiceAfter
+ ee.taltech.website.a_theory.question11.UserServiceBefore
+ee/taltech/website/a_theory/question11/Nr3isL.java
+ ee.taltech.website.a_theory.question11.Nr3isL
+ee/taltech/website/a_theory/question11/FirstReadMeSOLID.java
+ ee.taltech.website.a_theory.question11.FirstReadMeSOLID
+ee/taltech/website/a_theory/question11/Nr2isO.java
+ ee.taltech.website.a_theory.question11.Nr2isO
+ee/taltech/website/a_theory/question9/Docker.java
+ ee.taltech.website.a_theory.question9.Docker
+ee/taltech/website/a_theory/question8/CD.java
+ ee.taltech.website.a_theory.question8.CD
+ee/taltech/website/a_theory/question7/CI.java
+ ee.taltech.website.a_theory.question7.CI
+ee/taltech/website/a_theory/question11/Nr5isD.java
+ ee.taltech.website.a_theory.question11.Nr5isD

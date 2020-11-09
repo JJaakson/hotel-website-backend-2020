@@ -29,28 +29,11 @@
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/classAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/ee/taltech/website/RoomsApplicationInit.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/ee/taltech/website/RoomsApplicationInit.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/ee/taltech/website/WebsiteApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/ee/taltech/website/WebsiteApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/ee/taltech/website/config/SwaggerConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/ee/taltech/website/config/SwaggerConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/ee/taltech/website/controller/RoomsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/ee/taltech/website/controller/RoomsController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/ee/taltech/website/exception/InvalidRoomException.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/ee/taltech/website/exception/InvalidRoomException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/ee/taltech/website/exception/RoomNotFoundException.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/ee/taltech/website/exception/RoomNotFoundException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/ee/taltech/website/model/Room.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/ee/taltech/website/model/Room.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/ee/taltech/website/repository/RoomsRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/ee/taltech/website/repository/RoomsRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/ee/taltech/website/service/RoomsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/ee/taltech/website/service/RoomsService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/application.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/h2/trivago.lock.db" beforeDir="false" afterPath="$PROJECT_DIR$/h2/trivago.lock.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/spring.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/spring.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/spring.log.2020-09-27.0.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ee/taltech/website/a_theory/question6/sheep/SheepFarm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ee/taltech/website/a_theory/question6/sheep/SheepFarm.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,6 +128,9 @@
     <property name="settings.editor.selected.configurable" value="preferences.JavaFX" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\jupat\IdeaProjects\iti0203-project-back\src\main\java\ee\taltech\website\a_theory" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\rjuur\IdeaProjects\iti0203-project-back\src\main\resources" />
       <recent name="C:\Users\rjuur\IdeaProjects\iti0203-project-back\src" />
@@ -293,6 +279,7 @@
       <workItem from="1603718543124" duration="300000" />
       <workItem from="1604832555214" duration="7107000" />
       <workItem from="1604843794652" duration="247000" />
+      <workItem from="1604938103670" duration="843000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit # 2">
       <created>1600418941578</created>
@@ -358,7 +345,21 @@
       <option name="presentableId" value="LOCAL−00010" />
       <updated>1604843848694</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Added part 2 questions">
+      <created>1604916445979</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1604916445979</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Renamed jar file to hotel-trivago-backend.jar">
+      <created>1604938348187</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1604938348187</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -382,7 +383,9 @@
     <MESSAGE value="Test build # 4" />
     <MESSAGE value="Back-end development #5" />
     <MESSAGE value="Added gitlab-ci for the runner" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added gitlab-ci for the runner" />
+    <MESSAGE value="Added part 2 questions" />
+    <MESSAGE value="Renamed jar file to hotel-trivago-backend.jar" />
+    <option name="LAST_COMMIT_MESSAGE" value="Renamed jar file to hotel-trivago-backend.jar" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2360" y="99" key="#Project_Structure" timestamp="1604842034981">
@@ -423,43 +426,48 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="160" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1601279568246" />
-    <state x="2480" y="121" key="CommitChangelistDialog2" timestamp="1604843930333">
-      <screen x="1920" y="0" width="1920" height="1050" />
+    <state x="448" y="9" key="CommitChangelistDialog2" timestamp="1604938346918">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="448" y="16" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1601279658582" />
     <state x="448" y="9" key="CommitChangelistDialog2/0.0.1536.834/1920.0.1920.1050@0.0.1536.834" timestamp="1604833896201" />
     <state x="2480" y="121" key="CommitChangelistDialog2/0.0.1536.834/1920.0.1920.1050@1920.0.1920.1050" timestamp="1604843930333" />
+    <state x="448" y="9" key="CommitChangelistDialog2/0.0.1536.834@0.0.1536.834" timestamp="1604938346918" />
     <state x="2659" y="289" key="FileChooserDialogImpl" timestamp="1604843303229">
       <screen x="1920" y="0" width="1920" height="1050" />
     </state>
     <state x="2659" y="289" key="FileChooserDialogImpl/0.0.1536.834/1920.0.1920.1050@1920.0.1920.1050" timestamp="1604843303229" />
-    <state width="1877" height="352" key="GridCell.Tab.0.bottom" timestamp="1604843674570">
-      <screen x="1920" y="0" width="1920" height="1050" />
+    <state width="1493" height="178" key="GridCell.Tab.0.bottom" timestamp="1604938244430">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1493" height="121" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1601279554162" />
     <state width="1493" height="187" key="GridCell.Tab.0.bottom/0.0.1536.834/1920.0.1920.1050@0.0.1536.834" timestamp="1604834748252" />
     <state width="1877" height="352" key="GridCell.Tab.0.bottom/0.0.1536.834/1920.0.1920.1050@1920.0.1920.1050" timestamp="1604843674570" />
+    <state width="1493" height="178" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1604938244430" />
     <state width="1877" height="251" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1603699856865" />
-    <state width="1877" height="352" key="GridCell.Tab.0.center" timestamp="1604843674569">
-      <screen x="1920" y="0" width="1920" height="1050" />
+    <state width="1493" height="178" key="GridCell.Tab.0.center" timestamp="1604938244430">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1493" height="121" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1601279554161" />
     <state width="1493" height="187" key="GridCell.Tab.0.center/0.0.1536.834/1920.0.1920.1050@0.0.1536.834" timestamp="1604834748251" />
     <state width="1877" height="352" key="GridCell.Tab.0.center/0.0.1536.834/1920.0.1920.1050@1920.0.1920.1050" timestamp="1604843674569" />
+    <state width="1493" height="178" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1604938244430" />
     <state width="1877" height="251" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1603699856865" />
-    <state width="1877" height="352" key="GridCell.Tab.0.left" timestamp="1604843674569">
-      <screen x="1920" y="0" width="1920" height="1050" />
+    <state width="1493" height="178" key="GridCell.Tab.0.left" timestamp="1604938244430">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1493" height="121" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1601279554160" />
     <state width="1493" height="187" key="GridCell.Tab.0.left/0.0.1536.834/1920.0.1920.1050@0.0.1536.834" timestamp="1604834748251" />
     <state width="1877" height="352" key="GridCell.Tab.0.left/0.0.1536.834/1920.0.1920.1050@1920.0.1920.1050" timestamp="1604843674569" />
+    <state width="1493" height="178" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1604938244430" />
     <state width="1877" height="251" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1603699856864" />
-    <state width="1877" height="352" key="GridCell.Tab.0.right" timestamp="1604843674569">
-      <screen x="1920" y="0" width="1920" height="1050" />
+    <state width="1493" height="178" key="GridCell.Tab.0.right" timestamp="1604938244430">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1493" height="121" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1601279554161" />
     <state width="1493" height="187" key="GridCell.Tab.0.right/0.0.1536.834/1920.0.1920.1050@0.0.1536.834" timestamp="1604834748252" />
     <state width="1877" height="352" key="GridCell.Tab.0.right/0.0.1536.834/1920.0.1920.1050@1920.0.1920.1050" timestamp="1604843674569" />
+    <state width="1493" height="178" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1604938244430" />
     <state width="1877" height="251" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1603699856865" />
     <state width="1877" height="352" key="GridCell.Tab.1.bottom" timestamp="1604843674570">
       <screen x="1920" y="0" width="1920" height="1050" />
@@ -506,12 +514,13 @@
     </state>
     <state x="369" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1601213676881" />
     <state x="2381" y="168" width="986" height="712" key="SettingsEditor/0.0.1536.834/1920.0.1920.1050@1920.0.1920.1050" timestamp="1604844011672" />
-    <state x="2472" y="258" key="Vcs.Push.Dialog.v2" timestamp="1604843850035">
-      <screen x="1920" y="0" width="1920" height="1050" />
+    <state x="442" y="205" key="Vcs.Push.Dialog.v2" timestamp="1604938350731">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="442" y="202" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1601276613705" />
     <state x="442" y="204" key="Vcs.Push.Dialog.v2/0.0.1536.834/1920.0.1920.1050@0.0.1536.834" timestamp="1604833897988" />
     <state x="2472" y="258" key="Vcs.Push.Dialog.v2/0.0.1536.834/1920.0.1920.1050@1920.0.1920.1050" timestamp="1604843850035" />
+    <state x="442" y="205" key="Vcs.Push.Dialog.v2/0.0.1536.834@0.0.1536.834" timestamp="1604938350731" />
     <state x="2012" y="92" width="1736" height="866" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1604844045990">
       <screen x="1920" y="0" width="1920" height="1050" />
     </state>
