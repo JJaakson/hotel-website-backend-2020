@@ -39,4 +39,3 @@ deploy rooms:
     - mkdir -p ~/api-deployment # mkdir make folder api-deployment ~/ is under current user directory so for gitlab it would be /home/gitlab/api-deployment
     - rm -rf ~/api-deployment/* # rm remove -rf is recursive files from api-deployment
     - cp -r build/libs/. ~/api-deployment # cp - copy build/libs is where
-    - sudo service rooms restart  # this requires sudo rights for gitlab user
