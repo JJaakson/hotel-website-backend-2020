@@ -2,8 +2,7 @@
 -    We are using AWS for our Ubuntu 20.04 virtual server and the instace type is t2.micro.
 
 **Connecting:**
-        Since we are using Windows 10, we are connecting through Putty to the server and we do not know the
-        correct command to connect with Linux.
+        We are using Putty to connect to the server, since we are using Windows 10.
     
 - For Windows(Using Putty):
         
