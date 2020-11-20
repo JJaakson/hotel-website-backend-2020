@@ -6,7 +6,7 @@
     
 - For Windows(Using Putty):
         
-    - Open Putty, insert into Host Name box: ubuntu@ec2-13-59-14-54.us-east-2.compute.amazonaws.com;
+    - Open Putty, insert into Host Name box: ubuntu@ec2-13-59-14-54.us-east-2.compute.amazonaws.com
 
     - Ensure that Port value is 22 and connection type is SSH;
 
