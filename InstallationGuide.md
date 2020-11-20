@@ -6,7 +6,7 @@
     
 - For Windows(Using Putty):
         
-    - Open Putty, insert into Host Name box: ubuntu@ec2-13-59-14-54.us-east-2.compute.amazonaws.com
+    - Open Putty, insert into Host Name box: ubuntu@ec2-13-59-14-54.us-east-2.compute.amazonaws.com;
 
     - Ensure that Port value is 22 and connection type is SSH;
 
@@ -75,7 +75,7 @@ our teams public keys and all of the mentors public keys.
         an eye on the project when there are multiple tasks/projects running. And for the executor
         choose **shell**.
 
-    - To start the gitlab runner and to see the status insert:
+    - To start the gitlab runner and to see the status, insert the following:
 
             sudo service gitlab-runner start
 
@@ -83,13 +83,13 @@ our teams public keys and all of the mentors public keys.
 
             (sudo service gitlab-runner restart)
 
-Now it is needed to configure CI in gitlab and to do that the project has to have
-.gitlab-ci.yml file in projects root. This will build and test your project depending on how
-you configure it official guide https://docs.gitlab.com/ee/ci/yaml/ , but we used the given
+Now it is needed to configure CI in gitlab, and to do that, the project has to have
+.gitlab-ci.yml file in projects root. This will build and test your project, depending on how
+you configure it. Official guide https://docs.gitlab.com/ee/ci/yaml/ , we used the given
 example and modified it.
 
-Every time when the project pushed and this file is in the prject root and the runner is running
-it will execute pipeline and its configured jobs and if everything is done correctly the jobs will
+Every time when the project is pushed and this file is in the project root, and the runner is running,
+it will execute pipeline, its configured jobs and if everything is done correctly, the jobs will
 succeed and produce the builds on the servers runner. (For this project, both repositories
 back- and front-end have to be registered)
 For our project, we had a few set backs but everything went fine.
@@ -97,14 +97,14 @@ For our project, we had a few set backs but everything went fine.
 
 - **Testing(For backend jar file):**
         If the deploy stage passed, it created a runnable jar file on our server. 
-    - To test and try torun it on our server go:
+    - To test and try to run it on our server, go to:
 
             sudo su gitlab-runner
 
         This will log you in as gitlab-runner.
 
-    - Go to the correct directory, this will be depending on how deploy is configured, for our project
-        it is in the folder api-deployment:
+    - Go to the correct directory, this will be depending on how deploy is configured. For our project
+        it is in the folder 'api-deployment':
 
             cd /home/gitlab-runner/
 
@@ -116,15 +116,14 @@ For our project, we had a few set backs but everything went fine.
 
             java -jar jarfile.jar
 
-If everything went well, it should start without anyproblems. We setup Swagger to test our api
+If everything went well, it should start without any problems. We setup Swagger to test our api, 
 so if it started on the server, we can go to http://13.59.14.54:8080/api/swagger-ui/ to see if
 everything is running fine.
 
 
 - **Back-end configuration:**
         To make the api run in the background we need to create a service that the server will run.
-        For that to happen login as user ubuntu(if logged in as gitlab-runner insert: exit). And we
-        need to create a service. 
+        For that to happen, login as user ubuntu (if logged in as gitlab-runner, insert: exit). 
     - To create a service file (for this project rooms.service):
 
             cd /etc/systemd/system/
@@ -182,7 +181,7 @@ If everything went as planned, jar file should be running. http://13.59.14.54:80
             sudo apt-get install nginx
 
         Nginx creates a default config that won't match the project, so it is needed to create and replace
-        with our projects config. 
+        with our project's config. 
 
     - To create a new config file:
 
@@ -205,14 +204,14 @@ If everything went as planned, jar file should be running. http://13.59.14.54:80
             sudo ln -s /home/gitlab-runner/front-deployment/ /var/www/front-deployment/
 
     - Now we need to edit the file in sites-available and add necessary code:
-        - Backend proxy, this will not need you to enter the port address when accessing it from other
+        - Backend proxy, this will not require you to enter the port address when accessing it from other
             devices:
 
                 location /api/ {
                         proxy_pass   http://localhost:8000;
                     }
 
-        - To show our frontend, replace root to point to:
+        - To show our frontend, replace 'root' to point to:
 
                 root   /var/www/front-deployment;
 
