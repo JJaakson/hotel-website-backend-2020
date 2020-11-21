@@ -5,31 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9dcac481-4659-493a-9995-ae28f21d06d0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/taskHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/ee/taltech/website/RoomsApplicationInit.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/ee/taltech/website/RoomsApplicationInit.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/ee/taltech/website/controller/IndexController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/ee/taltech/website/controller/RoomsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/ee/taltech/website/controller/RoomsController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/ee/taltech/website/controller/TestController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/ee/taltech/website/model/Room.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/ee/taltech/website/model/Room.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/ee/taltech/website/repository/ItemRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/ee/taltech/website/service/RoomsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/ee/taltech/website/service/RoomsService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/h2/trivago.lock.db" beforeDir="false" afterPath="$PROJECT_DIR$/h2/trivago.lock.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/spring.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/spring.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/spring.log.2020-09-27.0.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitlab-ci.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.gitlab-ci.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -323,7 +299,14 @@
       <option name="project" value="LOCAL" />
       <updated>1602950302925</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00013" summary="Changet gitlab-ci">
+      <created>1604940710550</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1604940710550</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -334,11 +317,11 @@
     <MESSAGE value="Initial commit # 3" />
     <MESSAGE value="Test build # 4" />
     <MESSAGE value="Back-end development #5" />
-    <MESSAGE value="fixed typos in room descriptions" />
-    <MESSAGE value="Anwsered questions number 4 and 5" />
-    <MESSAGE value="Anwsered questions number 6, Chocolate" />
-    <MESSAGE value="improved question number 5" />
-    <option name="LAST_COMMIT_MESSAGE" value="improved question number 5" />
+    <MESSAGE value="Added gitlab-ci for the runner" />
+    <MESSAGE value="Added part 2 questions" />
+    <MESSAGE value="Renamed jar file to hotel-trivago-backend.jar" />
+    <MESSAGE value="Changet gitlab-ci" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changet gitlab-ci" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2360" y="99" key="#Project_Structure" timestamp="1600766199481">
@@ -372,16 +355,14 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="160" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1601279568246" />
-    <state x="448" y="16" key="CommitChangelistDialog2" timestamp="1602950300566">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="448" y="9" key="CommitChangelistDialog2" timestamp="1604940709398">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="448" y="16" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1602950300566" />
-    <state x="2480" y="121" key="CommitChangelistDialog2/0.0.1536.834/1920.0.1920.1050@1920.0.1920.1050" timestamp="1600768359549" />
-    <state x="247" y="79" key="DiffContextDialog" timestamp="1602944446382">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="247" y="79" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1602944446382" />
-    <state x="2659" y="289" key="FileChooserDialogImpl" timestamp="1600418220421">
+    <state x="448" y="16" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1601279658582" />
+    <state x="448" y="9" key="CommitChangelistDialog2/0.0.1536.834/1920.0.1920.1050@0.0.1536.834" timestamp="1604833896201" />
+    <state x="2480" y="121" key="CommitChangelistDialog2/0.0.1536.834/1920.0.1920.1050@1920.0.1920.1050" timestamp="1604843930333" />
+    <state x="448" y="9" key="CommitChangelistDialog2/0.0.1536.834@0.0.1536.834" timestamp="1604940709398" />
+    <state x="2659" y="289" key="FileChooserDialogImpl" timestamp="1604843303229">
       <screen x="1920" y="0" width="1920" height="1050" />
     </state>
     <state x="2659" y="289" key="FileChooserDialogImpl/0.0.1536.834/1920.0.1920.1050@1920.0.1920.1050" timestamp="1600418220421" />
@@ -449,9 +430,16 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="369" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1601213676881" />
-    <state x="2381" y="170" key="SettingsEditor/0.0.1536.834/1920.0.1920.1050@1920.0.1920.1050" timestamp="1600418535048" />
-    <state x="442" y="202" key="Vcs.Push.Dialog.v2" timestamp="1602950304206">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="2381" y="168" width="986" height="712" key="SettingsEditor/0.0.1536.834/1920.0.1920.1050@1920.0.1920.1050" timestamp="1604844011672" />
+    <state x="442" y="205" key="Vcs.Push.Dialog.v2" timestamp="1604940712241">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="442" y="202" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1601276613705" />
+    <state x="442" y="204" key="Vcs.Push.Dialog.v2/0.0.1536.834/1920.0.1920.1050@0.0.1536.834" timestamp="1604833897988" />
+    <state x="2472" y="258" key="Vcs.Push.Dialog.v2/0.0.1536.834/1920.0.1920.1050@1920.0.1920.1050" timestamp="1604843850035" />
+    <state x="442" y="205" key="Vcs.Push.Dialog.v2/0.0.1536.834@0.0.1536.834" timestamp="1604940712241" />
+    <state x="2012" y="92" width="1736" height="866" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1604844045990">
+      <screen x="1920" y="0" width="1920" height="1050" />
     </state>
     <state x="442" y="202" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1602950304206" />
     <state x="2472" y="258" key="Vcs.Push.Dialog.v2/0.0.1536.834/1920.0.1920.1050@1920.0.1920.1050" timestamp="1600768362722" />
