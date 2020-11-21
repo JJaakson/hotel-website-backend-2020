@@ -86,7 +86,8 @@ our teams public keys and all of the mentors public keys.
 Now it is needed to configure CI in gitlab, and to do that, the project has to have
 .gitlab-ci.yml file in projects root. This will build and test your project, depending on how
 you configure it. Official guide https://docs.gitlab.com/ee/ci/yaml/ , we used the given
-example and modified it.
+example and modified it. Our back-end: https://gitlab.cs.ttu.ee/jjaaks/iti0203-project-back/-/blob/master/.gitlab-ci.yml
+and front-end:https://gitlab.cs.ttu.ee/jjaaks/iti0203-project-front/-/blob/master/.gitlab-ci.yml
 
 Every time when the project is pushed and this file is in the project root, and the runner is running,
 it will execute pipeline, its configured jobs and if everything is done correctly, the jobs will
