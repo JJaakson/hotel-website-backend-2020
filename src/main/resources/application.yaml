@@ -23,6 +23,9 @@ spring:
     console:
 #      this enables http://localhost:8080/h2-console
       enabled: true
+  main:
+    allow-bean-definition-overriding: true
 logging:
+
   file:
     path: ./logs
