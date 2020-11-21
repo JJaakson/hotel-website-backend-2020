@@ -8,7 +8,8 @@ public class CI {
 
     //todo B
     // What makes integration continuous?
-    // Answer:
+    // Answer: Build servers configuration to compile the code and send results to the developers.
+    // (Periodically or after every commit)
 
     //todo C
     // In the class we had 3 stages in our CI/CD process, tick [x] which ones stand for continuous integration
