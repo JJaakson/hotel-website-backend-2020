@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RequestMapping("rooms")
+@RequestMapping({"rooms", "rooms2"})
 @RestController
 public class RoomsController {
 

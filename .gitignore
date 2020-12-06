@@ -1,24 +1,12 @@
-**/a_theory
-**/b_theory
-HELP.md
 .gradle
 build/
-h2
 logs
+h2
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**/build/
 !**/src/test/**/build/
 
-### STS ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
-
-### IntelliJ IDEA  ###
+### IntelliJ IDEA ###
 .idea
 *.iws
 *.iml
@@ -26,13 +14,3 @@ logs
 out/
 !**/src/main/**/out/
 !**/src/test/**/out/
-
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
-
-### VS Code ###
-.vscode/
