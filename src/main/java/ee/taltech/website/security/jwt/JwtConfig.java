@@ -11,8 +11,8 @@ import org.springframework.stereotype.Component;
 @ConfigurationProperties(prefix = "jwt")
 public class JwtConfig { //external config for jwt
 
-    private String secret = "trivago";
-    private int durationMin = 10;
+    private String secret;
+    private int durationMin;
 
     public int getDurationMillis() {
         return durationMin * 60 * 1000;

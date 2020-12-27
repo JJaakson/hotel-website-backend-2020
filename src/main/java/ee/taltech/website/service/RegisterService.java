@@ -22,11 +22,15 @@ public class RegisterService {
         if (isBlank(registerDto.getUsername())) {
             throw new UserException("missing username");
         }
+        if (isBlank(registerDto.getEmail())) {
+            throw new UserException("missing email");
+        }
         if (isBlank(registerDto.getPassword())) {
             throw new UserException("missing password");
         }
         User user = new User();
         user.setUsername(registerDto.getUsername());
+        user.setEmail(registerDto.getEmail());
         user.setPassword(passwordEncoder.encode(registerDto.getPassword()));
         user.setRole(DbRole.USER);
         usersRepository.save(user);
