@@ -85,4 +85,13 @@ public class BookingsService {
                 || endDate.isEqual(LocalDate.parse(b.getStartDate())))
                 .collect(Collectors.toList());
     }
+
+    public void deleteBooking(Long id, String username) throws Exception {
+        Booking booking = findById(id);
+        if (booking.getName().equals(username)) {
+            bookingsRepository.delete(booking);
+        } else {
+            throw new Exception("Usernames do not match!");
+        }
+    }
 }

@@ -1,5 +1,6 @@
 package ee.taltech.website.security.jwt;
 
+import ee.taltech.website.controller.BookingsController;
 import ee.taltech.website.service.CustomUserDetailService;
 import io.jsonwebtoken.ExpiredJwtException;
 import lombok.extern.slf4j.Slf4j;
