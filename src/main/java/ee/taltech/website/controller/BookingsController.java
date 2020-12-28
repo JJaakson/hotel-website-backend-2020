@@ -2,21 +2,27 @@ package ee.taltech.website.controller;
 
 import ee.taltech.website.model.Booking;
 import ee.taltech.website.dto.DataToSearchBy;
+import ee.taltech.website.security.jwt.JwtUtil;
 import ee.taltech.website.service.BookingsService;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@AllArgsConstructor
 @RequestMapping("bookings")
 @RestController
 public class BookingsController {
+
+    private JwtUtil jwtUtil;
 
     @Autowired
     private BookingsService bookingsService;
 
     @RequestMapping
-    public List<Booking> getBookingByUsername(@RequestParam(value="username") String username) {
+    public List<Booking> getBookingByUsername(@RequestParam(value="username") String token) {
+        String username = jwtUtil.getUsernameFromToken(token);
         return bookingsService.findAllByUsername(username);
     }
 

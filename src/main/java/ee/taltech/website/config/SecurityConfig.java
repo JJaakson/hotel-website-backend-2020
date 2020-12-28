@@ -55,6 +55,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter { //WebSecurity
                 .antMatchers("/users/register").permitAll()
                 .antMatchers("/users/login").permitAll()
                 .antMatchers("/swagger-ui/**").permitAll()
+                .antMatchers("/bookings/all").hasRole("ADMIN")
                 .antMatchers(HttpMethod.GET, "/rooms/**").permitAll()
                 .anyRequest().fullyAuthenticated()
         ; //if this is not disabled your https frontend must have https (not http) on backend;
