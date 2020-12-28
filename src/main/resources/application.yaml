@@ -30,4 +30,4 @@ logging:
     path: ./logs
 jwt:
   secret: trivago
-  durationMin: 60
+  durationMin: 120

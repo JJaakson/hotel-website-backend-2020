@@ -37,6 +37,10 @@ public class BookingsService {
         return booking;
     }
 
+    public List<Booking> findAllByUsername(String username) {
+        return bookingsRepository.findAllByUsername(username);
+    }
+
     public Booking save(Booking booking) {
         if (booking.getId() != null || booking.getName() == null || booking.getStartDate() == null
                 || booking.getEndDate() == null || booking.getPaymentInfo() == null || booking.getRoom() == null) {

@@ -15,12 +15,17 @@ public class BookingsController {
     @Autowired
     private BookingsService bookingsService;
 
-    @GetMapping
+    @RequestMapping
+    public List<Booking> getBookingByUsername(@RequestParam(value="username") String username) {
+        return bookingsService.findAllByUsername(username);
+    }
+
+    @GetMapping("all")
     public List<Booking> getBookings() {
         return bookingsService.findAll();
     }
 
-    @GetMapping("{id}")
+    @RequestMapping(value = "/{id}")
     public Booking getBooking(@PathVariable Long id) {
         return bookingsService.findById(id);
     }
@@ -34,4 +39,6 @@ public class BookingsController {
     public List<Booking> getBookingsByDate(@RequestBody DataToSearchBy data) {
         return bookingsService.getBookingsByDate(data);
     }
+
+
 }
