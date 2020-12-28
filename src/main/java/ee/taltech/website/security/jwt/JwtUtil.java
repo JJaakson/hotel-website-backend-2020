@@ -1,6 +1,5 @@
 package ee.taltech.website.security.jwt;
 
-import ee.taltech.website.security.jwt.JwtConfig;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
