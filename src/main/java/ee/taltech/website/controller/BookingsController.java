@@ -30,13 +30,11 @@ public class BookingsController {
 
     @GetMapping("all")
     public List<Booking> getBookings() {
-        //System.out.println(token);
         return bookingsService.findAll();
     }
 
     @GetMapping("{id}")
     public Booking getBooking(@PathVariable Long id) {
-        System.out.println("ALLO");
         return bookingsService.findById(id);
     }
 
@@ -47,8 +45,6 @@ public class BookingsController {
 
     @DeleteMapping("{id}")
     public void deleteBooking(@PathVariable Long id, @RequestHeader (name = "Authorization") String token) throws Exception {
-        System.out.println(token);
-        System.out.println(token.substring(7));
         String username = jwtUtil.getUsernameFromToken(token.substring(7));
         bookingsService.deleteBooking(id, username);
     }

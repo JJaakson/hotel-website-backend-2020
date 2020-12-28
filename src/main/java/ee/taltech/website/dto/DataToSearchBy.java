@@ -5,13 +5,11 @@ public class DataToSearchBy {
     private Long room;
     private String startDate;
     private String endDate;
-    private String username;
 
-    public DataToSearchBy(Long roomId, String startDate, String endDate, String username) {
+    public DataToSearchBy(Long roomId, String startDate, String endDate) {
         this.room = roomId;
         this.startDate = startDate;
         this.endDate = endDate;
-        this.username = username;
     }
 
 
@@ -39,11 +37,4 @@ public class DataToSearchBy {
         this.endDate = endDate;
     }
 
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
 }
