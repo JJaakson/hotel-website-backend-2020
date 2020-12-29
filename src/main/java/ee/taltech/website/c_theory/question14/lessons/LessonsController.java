@@ -1,6 +1,18 @@
 package ee.taltech.website.c_theory.question14.lessons;
 
+import ee.taltech.website.model.Booking;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
+import java.util.List;
+
+@RequestMapping("lessons")
+@RestController
 public class LessonsController {
+
+    // Mimics service
+    //@Autowired
+    private List<Lesson> lessonsService = new ArrayList<>();
 
     //todo for question 14 there are 4 assignments in total
     // Each person has to do only 1. So 2 person team has to do 2 different ones, 3 person - 3, 4 person - 4.
@@ -18,18 +30,76 @@ public class LessonsController {
     //todo A add necessary annotations on the class
 
     //todo B create a method to query lessons (plural)
+    @GetMapping
+    public List<Lesson> getLessons(@RequestParam(value = "order", defaultValue = "original") String order) {
+        switch (order) {
+            case "ascending":
+            case "descending":
+                return lessonsService;
+        }
+        return lessonsService;
+    }
 
     //todo C create a method to query single lesson
+    @GetMapping("{id}")
+    public Lesson getLesson(@PathVariable Long id,
+                            @RequestParam(value = "true", defaultValue = "false") boolean byCourse,
+                            @RequestParam(value = "year", defaultValue = "2020") String year) {
+        return findLesson(id, byCourse, year);
+    }
 
     //todo D create a method to save a lesson
+    @PostMapping
+    public boolean saveLesson(@RequestBody Lesson lesson) {
+        return lessonsService.add(lesson);
+    }
 
     //todo E create a method to update a lesson
+    @PutMapping("{id}")
+    public Lesson updateLesson(@RequestBody Lesson lessonDto, @PathVariable Long id) {
+        Lesson dbLesson = findLesson(id);
+        if (dbLesson != null) {
+            lessonsService.remove(dbLesson);
+            // should replace all/neccesary variables
+            dbLesson = lessonDto;
+            lessonsService.add(dbLesson);
+            return dbLesson;
+        }
+        return null;
+    }
 
     //todo F create a method to delete a lesson
+    @DeleteMapping("{id}")
+    public void deleteLesson(@PathVariable Long id) {
+        Lesson dbLesson = findLesson(id);
+        if (dbLesson != null) {
+            lessonsService.remove(dbLesson);
+        }
+    }
 
     //todo G assuming each Lesson has students (one-to-many relation) create a method to query lesson's students
+    @GetMapping("students/{id}")
+    public List<Students> getStudents(@PathVariable Long id) {
+        Lesson dbLesson = findLesson(id);
+        if (dbLesson != null) {
+            return dbLesson.getStudents();
+        }
+        return new ArrayList<>();
+    }
 
     //todo H create a method to update lesson's name (and nothing else)
+    @PutMapping("newName/{id}")
+    public Lesson updateLessonsName(@RequestBody String newName, @PathVariable Long id) {
+        Lesson dbLesson = findLesson(id);
+        if (dbLesson != null) {
+            lessonsService.remove(dbLesson);
+            // should replace all/neccesary variables
+            dbLesson.setName(newName);
+            lessonsService.add(dbLesson);
+            return dbLesson;
+        }
+        return null;
+    }
 
     //todo G modify correct method to support searching lessons by course id while keeping original functionality
 
@@ -41,4 +111,16 @@ public class LessonsController {
     // * by least visitors first
     // (you can assume that by default it searches by predefined lecturer's order)
 
+    private Lesson findLesson(Long id) {
+        for (Lesson lesson : lessonsService) {
+            if (lesson.getId().equals(id)) {
+                return lesson;
+            }
+        }
+        return null;
+    }
+
+    private Lesson findLesson(Long id, boolean byCourse, String year) {
+        return null;
+    }
 }
