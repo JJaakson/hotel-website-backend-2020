@@ -1,6 +1,7 @@
 package ee.taltech.website.config;
 
 import ee.taltech.website.security.RestAuthenticationEntryPoint;
+import ee.taltech.website.security.Roles;
 import ee.taltech.website.security.jwt.JwtFilter;
 import ee.taltech.website.service.CustomUserDetailService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,10 +32,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter { //WebSecurity
     @Autowired
     private CustomUserDetailService customUserDetailService;
 
+
+
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(customUserDetailService);
     }
+
 
 
     @Override

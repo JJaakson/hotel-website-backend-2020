@@ -2,12 +2,12 @@ package ee.taltech.website.controller;
 
 import ee.taltech.website.model.Booking;
 import ee.taltech.website.dto.DataToSearchBy;
+import ee.taltech.website.security.Roles;
 import ee.taltech.website.security.jwt.JwtUtil;
 import ee.taltech.website.service.BookingsService;
 import lombok.AllArgsConstructor;
-import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -33,6 +33,7 @@ public class BookingsController {
         return bookingsService.findAll();
     }
 
+    @Secured(Roles.ADMIN)
     @GetMapping("{id}")
     public Booking getBooking(@PathVariable Long id) {
         return bookingsService.findById(id);

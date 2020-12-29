@@ -16,6 +16,7 @@ public class Booking {
     private String startDate;
     private String endDate;
     private String paymentInfo;
+    private Integer total;
     @OneToOne
     private Room room;
 
@@ -85,5 +86,13 @@ public class Booking {
 
     public void setEndDate(String endDate) {
         this.endDate = endDate;
+    }
+
+    public Integer getTotal() {
+        return total;
+    }
+
+    public void setTotal(Integer total) {
+        this.total = total;
     }
 }

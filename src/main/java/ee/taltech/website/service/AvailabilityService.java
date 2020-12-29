@@ -30,6 +30,6 @@ public class AvailabilityService {
         Period period = Period.between(LocalDate.parse(data.getStartDate()), LocalDate.parse(data.getEndDate()));
         return new RoomDto(data.getRoomId(), roomBeingBooked.getName(),
                 roomBeingBooked.getAmount() - bookedRoomsCount,
-                roomBeingBooked.getCost() * period.getDays());
+                roomBeingBooked.getCost());
     }
 }

@@ -31,10 +31,10 @@ public class BookingsService {
     }
 
     public Booking findById(Long id) {
-        Booking booking = bookingsRepository.findById(id).orElseThrow(BookingNotFoundException::new);
-        Period period = Period.between(LocalDate.parse(booking.getStartDate()), LocalDate.parse(booking.getEndDate()));
-        booking.getRoom().setCost(period.getDays() * booking.getRoom().getCost());
-        return booking;
+        // Period period = Period.between(LocalDate.parse(booking.getStartDate()), LocalDate.parse(booking.getEndDate()));
+        // booking.setTotal(period.getDays() * booking.getRoom().getCost());
+        // booking.getRoom().setCost(period.getDays() * booking.getRoom().getCost()); // old code
+        return bookingsRepository.findById(id).orElseThrow(BookingNotFoundException::new);
     }
 
     public List<Booking> findAllByUsername(String username) {
@@ -46,6 +46,8 @@ public class BookingsService {
                 || booking.getEndDate() == null || booking.getPaymentInfo() == null || booking.getRoom() == null) {
             throw new InvalidBookingException("Insufficient data");
         }
+        Period period = Period.between(LocalDate.parse(booking.getStartDate()), LocalDate.parse(booking.getEndDate()));
+        booking.setTotal(period.getDays() * booking.getRoom().getCost());
         Room roomBeingBooked = roomsService.findById(booking.getRoom().getId());
         if (bookedRoomsCount(booking.getRoom().getId(), booking.getStartDate(), booking.getEndDate())
                 == roomBeingBooked.getAmount()) {
