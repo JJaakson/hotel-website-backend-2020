@@ -33,7 +33,6 @@ public class BookingsController {
         return bookingsService.findAll();
     }
 
-    @Secured(Roles.ADMIN)
     @GetMapping("{id}")
     public Booking getBooking(@PathVariable Long id) {
         return bookingsService.findById(id);

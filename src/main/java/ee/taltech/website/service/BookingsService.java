@@ -90,7 +90,7 @@ public class BookingsService {
 
     public void deleteBooking(Long id, String username) throws Exception {
         Booking booking = findById(id);
-        if (booking.getName().equals(username)) {
+        if (booking.getName().equals(username) || username.equals("admin")) {
             bookingsRepository.delete(booking);
         } else {
             throw new Exception("Usernames do not match!");
