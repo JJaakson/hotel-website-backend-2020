@@ -31,21 +31,17 @@ public class LessonsController {
 
     //todo B create a method to query lessons (plural)
     @GetMapping
-    public List<Lesson> getLessons(@RequestParam(value = "order", defaultValue = "original") String order) {
-        switch (order) {
-            case "ascending":
-            case "descending":
-                return lessonsService;
-        }
+    public List<Lesson> getLessons(@RequestParam(value = "true", required = false) boolean byCourse,
+                                   @RequestParam(value = "year", defaultValue = "2020") String year,
+                                   @RequestParam(value = "order", defaultValue = "original") String order) {
+        //code
         return lessonsService;
     }
 
     //todo C create a method to query single lesson
     @GetMapping("{id}")
-    public Lesson getLesson(@PathVariable Long id,
-                            @RequestParam(value = "true", defaultValue = "false") boolean byCourse,
-                            @RequestParam(value = "year", defaultValue = "2020") String year) {
-        return findLesson(id, byCourse, year);
+    public Lesson getLesson(@PathVariable Long id) {
+        return findLesson(id);
     }
 
     //todo D create a method to save a lesson
@@ -88,7 +84,7 @@ public class LessonsController {
     }
 
     //todo H create a method to update lesson's name (and nothing else)
-    @PutMapping("newName/{id}")
+    @PatchMapping("{id}")
     public Lesson updateLessonsName(@RequestBody String newName, @PathVariable Long id) {
         Lesson dbLesson = findLesson(id);
         if (dbLesson != null) {
@@ -117,10 +113,6 @@ public class LessonsController {
                 return lesson;
             }
         }
-        return null;
-    }
-
-    private Lesson findLesson(Long id, boolean byCourse, String year) {
         return null;
     }
 }
