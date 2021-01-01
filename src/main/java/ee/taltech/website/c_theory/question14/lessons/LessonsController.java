@@ -107,6 +107,7 @@ public class LessonsController {
     // * by least visitors first
     // (you can assume that by default it searches by predefined lecturer's order)
 
+    //helper method
     private Lesson findLesson(Long id) {
         for (Lesson lesson : lessonsService) {
             if (lesson.getId().equals(id)) {
