@@ -18,7 +18,7 @@ public class LessonsController {
     // Make sure to commit under your user otherwise points won't count.
     // I didn't number these so you can pick your favorite
 
-    //todo
+    // todo
     // You are creating a rest controller for lessons. Think page where you are looking at lessons like echo360.
     // You need to add necessary annotations and methods to this class.
     // This class should compile.
