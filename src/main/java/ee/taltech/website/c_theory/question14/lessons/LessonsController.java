@@ -1,6 +1,5 @@
 package ee.taltech.website.c_theory.question14.lessons;
 
-import ee.taltech.website.model.Booking;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
