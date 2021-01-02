@@ -26,6 +26,8 @@ spring:
   main:
     allow-bean-definition-overriding: true
 logging:
-
   file:
     path: ./logs
+jwt:
+  secret: trivago
+  durationMin: 120

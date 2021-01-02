@@ -22,4 +22,11 @@ public class RoomsService {
         return roomsRepository.findById(id)
                 .orElseThrow(RoomNotFoundException::new);
     }
+
+    public Room updateCost(Integer cost, Long id) {
+        Room room = findById(id);
+        room.setCost(cost);
+        return roomsRepository.save(room);
+    }
+
 }

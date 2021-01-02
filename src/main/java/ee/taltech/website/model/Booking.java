@@ -12,10 +12,11 @@ public class Booking {
     @GeneratedValue
     private Long id;
 
-    private String name;
+    private String username;
     private String startDate;
     private String endDate;
     private String paymentInfo;
+    private Integer total;
     @OneToOne
     private Room room;
 
@@ -27,17 +28,17 @@ public class Booking {
         this.room = room;
     }
 
-    public Booking(Long id, String name, String startDate, String endDate, Room room, String paymentInfo) {
+    public Booking(Long id, String username, String startDate, String endDate, Room room, String paymentInfo) {
         this.id = id;
-        this.name = name;
+        this.username = username;
         this.startDate = startDate;
         this.endDate = endDate;
         this.room = room;
         this.paymentInfo = paymentInfo;
     }
 
-    public Booking(String name, String startDate, String endDate, Room room, String paymentInfo) {
-        this.name = name;
+    public Booking(String username, String startDate, String endDate, Room room, String paymentInfo) {
+        this.username = username;
         this.startDate = startDate;
         this.endDate = endDate;
         this.room = room;
@@ -64,11 +65,11 @@ public class Booking {
     }
 
     public String getName() {
-        return name;
+        return username;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setName(String username) {
+        this.username = username;
     }
 
     public String getStartDate() {
@@ -85,5 +86,13 @@ public class Booking {
 
     public void setEndDate(String endDate) {
         this.endDate = endDate;
+    }
+
+    public Integer getTotal() {
+        return total;
+    }
+
+    public void setTotal(Integer total) {
+        this.total = total;
     }
 }

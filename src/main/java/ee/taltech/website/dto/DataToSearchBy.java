@@ -4,6 +4,7 @@ public class DataToSearchBy {
 
     private Long room;
     private String startDate;
+    private String endDate;
 
     public DataToSearchBy(Long roomId, String startDate, String endDate) {
         this.room = roomId;
@@ -11,7 +12,6 @@ public class DataToSearchBy {
         this.endDate = endDate;
     }
 
-    private String endDate;
 
     public Long getRoomId() {
         return room;
@@ -36,4 +36,5 @@ public class DataToSearchBy {
     public void setEndDate(String endDate) {
         this.endDate = endDate;
     }
+
 }

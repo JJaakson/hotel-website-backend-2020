@@ -3,7 +3,6 @@ package ee.taltech.website.service;
 import ee.taltech.website.exception.BookingNotFoundException;
 import ee.taltech.website.exception.InvalidBookingException;
 import ee.taltech.website.exception.InvalidSearchException;
-import ee.taltech.website.exception.RoomNotFoundException;
 import ee.taltech.website.model.Booking;
 import ee.taltech.website.dto.DataToSearchBy;
 import ee.taltech.website.model.Room;
@@ -31,10 +30,11 @@ public class BookingsService {
     }
 
     public Booking findById(Long id) {
-        Booking booking = bookingsRepository.findById(id).orElseThrow(BookingNotFoundException::new);
-        Period period = Period.between(LocalDate.parse(booking.getStartDate()), LocalDate.parse(booking.getEndDate()));
-        booking.getRoom().setCost(period.getDays() * booking.getRoom().getCost());
-        return booking;
+        return bookingsRepository.findById(id).orElseThrow(BookingNotFoundException::new);
+    }
+
+    public List<Booking> findAllByUsername(String username) {
+        return bookingsRepository.findAllByUsername(username);
     }
 
     public Booking save(Booking booking) {
@@ -42,6 +42,8 @@ public class BookingsService {
                 || booking.getEndDate() == null || booking.getPaymentInfo() == null || booking.getRoom() == null) {
             throw new InvalidBookingException("Insufficient data");
         }
+        Period period = Period.between(LocalDate.parse(booking.getStartDate()), LocalDate.parse(booking.getEndDate()));
+        booking.setTotal(period.getDays() * booking.getRoom().getCost());
         Room roomBeingBooked = roomsService.findById(booking.getRoom().getId());
         if (bookedRoomsCount(booking.getRoom().getId(), booking.getStartDate(), booking.getEndDate())
                 == roomBeingBooked.getAmount()) {
@@ -80,5 +82,14 @@ public class BookingsService {
                 || startDate.isEqual(LocalDate.parse(b.getEndDate()))
                 || endDate.isEqual(LocalDate.parse(b.getStartDate())))
                 .collect(Collectors.toList());
+    }
+
+    public void deleteBooking(Long id, String username) throws Exception {
+        Booking booking = findById(id);
+        if (booking.getName().equals(username) || username.equals("admin")) {
+            bookingsRepository.delete(booking);
+        } else {
+            throw new Exception("Usernames do not match!");
+        }
     }
 }
