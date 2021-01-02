@@ -31,7 +31,7 @@ public class LessonsController {
 
     //todo B create a method to query lessons (plural)
     @GetMapping
-    public List<Lesson> getLessons(@RequestParam(value = "true", required = false) boolean byCourse,
+    public List<Lesson> getLessons(@RequestParam(value = "courseId", required = false) Long courseId,
                                    @RequestParam(value = "year", defaultValue = "2020") String year,
                                    @RequestParam(value = "order", defaultValue = "original") String order) {
         //code
