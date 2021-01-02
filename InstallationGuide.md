@@ -231,3 +231,5 @@ If everything went as planned, jar file should be running. http://13.59.14.54:80
 
 **And http://13.59.14.54 should display front-end.**
 
+**Now after every master branch push, CI/CD will deploy the new version of te code/jar file to the server. This is on both the backend and frontend.**
+
