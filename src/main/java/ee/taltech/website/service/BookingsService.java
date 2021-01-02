@@ -3,7 +3,6 @@ package ee.taltech.website.service;
 import ee.taltech.website.exception.BookingNotFoundException;
 import ee.taltech.website.exception.InvalidBookingException;
 import ee.taltech.website.exception.InvalidSearchException;
-import ee.taltech.website.exception.RoomNotFoundException;
 import ee.taltech.website.model.Booking;
 import ee.taltech.website.dto.DataToSearchBy;
 import ee.taltech.website.model.Room;
@@ -31,9 +30,6 @@ public class BookingsService {
     }
 
     public Booking findById(Long id) {
-        // Period period = Period.between(LocalDate.parse(booking.getStartDate()), LocalDate.parse(booking.getEndDate()));
-        // booking.setTotal(period.getDays() * booking.getRoom().getCost());
-        // booking.getRoom().setCost(period.getDays() * booking.getRoom().getCost()); // old code
         return bookingsRepository.findById(id).orElseThrow(BookingNotFoundException::new);
     }
 

@@ -27,7 +27,6 @@ public class AvailabilityService {
         if (bookedRoomsCount == roomBeingBooked.getAmount())  {
             throw new InvalidBookingException("No rooms available");
         }
-        Period period = Period.between(LocalDate.parse(data.getStartDate()), LocalDate.parse(data.getEndDate()));
         return new RoomDto(data.getRoomId(), roomBeingBooked.getName(),
                 roomBeingBooked.getAmount() - bookedRoomsCount,
                 roomBeingBooked.getCost());

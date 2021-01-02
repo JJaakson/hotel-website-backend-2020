@@ -1,7 +1,6 @@
 package ee.taltech.website.config;
 
 import ee.taltech.website.security.RestAuthenticationEntryPoint;
-import ee.taltech.website.security.Roles;
 import ee.taltech.website.security.jwt.JwtFilter;
 import ee.taltech.website.service.CustomUserDetailService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -54,7 +53,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter { //WebSecurity
                 .exceptionHandling().authenticationEntryPoint(restAuthenticationEntryPoint)
                 .and()
                 .authorizeRequests()
-//                this is for url based security
+                // this is for url based security
                 .antMatchers("/").permitAll()
                 .antMatchers("/users/register").permitAll()
                 .antMatchers("/users/login").permitAll()
@@ -81,5 +80,3 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter { //WebSecurity
         return super.authenticationManager();
     }
 }
-
-

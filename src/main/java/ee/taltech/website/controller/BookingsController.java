@@ -2,12 +2,10 @@ package ee.taltech.website.controller;
 
 import ee.taltech.website.model.Booking;
 import ee.taltech.website.dto.DataToSearchBy;
-import ee.taltech.website.security.Roles;
 import ee.taltech.website.security.jwt.JwtUtil;
 import ee.taltech.website.service.BookingsService;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

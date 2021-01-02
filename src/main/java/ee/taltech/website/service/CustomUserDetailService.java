@@ -55,4 +55,3 @@ public class CustomUserDetailService implements UserDetailsService {
         return Stream.of(user.getRole());
     }
 }
-
